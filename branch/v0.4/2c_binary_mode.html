@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Binary Mode | ThingSet Protocol Specification</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/thingset/branch/v0.4/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/thingset/branch/v0.4/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/thingset/branch/v0.4/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/thingset/branch/v0.4/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/thingset/branch/v0.4/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/thingset/branch/v0.4/favicons/favicon.ico">
+    <meta name="description" content="The ThingSet protocol provides a consistent, standardized way to configure, monitor and control ressource-constrained devices via different communication interfaces like Serial, LoRa, USB, Bluetooth or CAN.">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preload" href="/thingset/branch/v0.4/assets/css/0.styles.c027ba64.css" as="style"><link rel="preload" href="/thingset/branch/v0.4/assets/js/app.7e1b989c.js" as="script"><link rel="preload" href="/thingset/branch/v0.4/assets/js/2.d1779d51.js" as="script"><link rel="preload" href="/thingset/branch/v0.4/assets/js/3.b5a90050.js" as="script"><link rel="preload" href="/thingset/branch/v0.4/assets/js/17.76ae0be1.js" as="script"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/10.68018d76.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/11.c1808bb4.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/12.98ecfbf7.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/13.a3811688.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/14.393e3bc7.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/15.26149b18.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/16.f22c36ee.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/18.6145aa14.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/19.4b199fc0.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/20.fc68cf28.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/21.aed46329.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/22.6464eb63.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/23.8a8cf15c.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/24.4d4e7e7e.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/25.36679e33.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/26.151e28b0.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/27.7d1c34c1.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/28.332ba0d7.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/29.b035c8c6.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/30.01b825cc.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/31.30a3565f.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/32.2d4c55b6.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/33.85c3435c.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/34.6ee775b0.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/35.365389ef.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/36.73841804.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/37.24bbb752.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/38.4d7f649a.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/39.f122f195.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/4.b50bddb9.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/40.8469c376.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/41.ae658311.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/42.265302ce.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/43.cd87fd09.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/44.758d214c.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/5.dfd9db3d.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/6.c96e07da.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/7.a2e8fd4a.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/8.baf0f7d8.js"><link rel="prefetch" href="/thingset/branch/v0.4/assets/js/9.1ab050b2.js">
+    <link rel="stylesheet" href="/thingset/branch/v0.4/assets/css/0.styles.c027ba64.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/thingset/branch/v0.4/" class="home-link router-link-active"><img src="/thingset/branch/v0.4/favicons/apple-touch-icon.png" alt="ThingSet Protocol Specification" class="logo"> <span class="site-name">ThingSet Protocol Specification</span></a> <div class="links"><div class="search-box can-hide"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="History Menu" class="dropdown-title"><span class="title">History</span> <span class="arrow down"></span></button> <button type="button" aria-label="History Menu" class="mobile-dropdown-title"><span class="title">History</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/" class="nav-link">
+  v0.4
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/v0.3/" class="nav-link">
+  v0.3
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/v0.2/" class="nav-link">
+  v0.2
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/v0.1/" class="nav-link">
+  v0.1
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="History Menu" class="dropdown-title"><span class="title">History</span> <span class="arrow down"></span></button> <button type="button" aria-label="History Menu" class="mobile-dropdown-title"><span class="title">History</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/" class="nav-link">
+  v0.4
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/v0.3/" class="nav-link">
+  v0.3
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/v0.2/" class="nav-link">
+  v0.2
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/v0.4/v0.1/" class="nav-link">
+  v0.1
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Why ThingSet?</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/v0.4/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/thingset/branch/v0.4/1b_existing_solutions.html" class="sidebar-link">Existing Standards</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Application Layer</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/v0.4/2a_general.html" class="sidebar-link">General Concept</a></li><li><a href="/thingset/branch/v0.4/2b_text_mode.html" class="sidebar-link">Text Mode</a></li><li><a href="/thingset/branch/v0.4/2c_binary_mode.html" aria-current="page" class="active sidebar-link">Binary Mode</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#name-and-id-mapping" class="sidebar-link">Name and ID mapping</a></li><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#read-data" class="sidebar-link">Read data</a></li><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#update-data" class="sidebar-link">Update data</a></li><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#create-data" class="sidebar-link">Create data</a></li><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#delete-data" class="sidebar-link">Delete data</a></li><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#execute-function" class="sidebar-link">Execute function</a></li><li class="sidebar-sub-header"><a href="/thingset/branch/v0.4/2c_binary_mode.html#published-statements" class="sidebar-link">Published statements</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Lower Layers</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/v0.4/3a_serial.html" class="sidebar-link">Serial</a></li><li><a href="/thingset/branch/v0.4/3b_can.html" class="sidebar-link">CAN</a></li><li><a href="/thingset/branch/v0.4/3c_lorawan.html" class="sidebar-link">LoRaWAN</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Protocol Mapping</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/v0.4/4a_http.html" class="sidebar-link">HTTP</a></li><li><a href="/thingset/branch/v0.4/4b_coap.html" class="sidebar-link">CoAP</a></li><li><a href="/thingset/branch/v0.4/4c_mqtt.html" class="sidebar-link">MQTT</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tools</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/v0.4/5a_serial.html" class="sidebar-link">Serial</a></li><li><a href="/thingset/branch/v0.4/5b_can.html" class="sidebar-link">CAN bus</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="binary-mode"><a href="#binary-mode" class="header-anchor">#</a> Binary Mode</h1> <p>In the binary mode, the data is encoded using the CBOR format. The data structure is the same as in text mode, but numeric object IDs are used as identifiers by default instead of the object names.</p> <p>The length of the entire request or response is not encoded in the ThingSet protocol, but can be determined from the CBOR format. Packet length as well as checksums should be encoded in lower layer protocols. It is assumed that the parser always receives a complete request.</p> <p>The <strong>target</strong> of the binary mod is to work with as little payload data as possible. Hence, published statements only contain values and the corresponding IDs or names are only sent once at startup or can be requested manually later.</p> <p>The <strong>main challenge</strong> is to still be fully discoverable via the binary mode without requiring previous knowledge of the data exposed by the device.</p> <h3 id="requests"><a href="#requests" class="header-anchor">#</a> Requests</h3> <p>Each request message consists of a first byte as the request method identifier, a path or ID specifying the endpoint of the request and CBOR data as payload (if applicable).</p> <div class="language- extra-class"><pre><code>bin-request = bin-get / bin-post / bin-delete / bin-fetch / bin-ipatch
+
+bin-get    = %x01 endpoint
+
+bin-post   = %x02 endpoint cbor-data      ; exec or create is determined
+                                          ; based on data object type
+
+bin-delete = %x04 endpoint cbor-data
+
+bin-fetch  = %x05 endpoint ( cbor-array   ; IDs or names of requested data
+                           / %xF7 )       ; CBOR undefined: request array of
+                                          ; all IDs or names behind endpoint
+
+bin-ipatch = %x07 endpoint cbor-map
+
+endpoint   = path         ; CBOR string: path same as text mode
+           / parent-id    ; CBOR uint: parent object ID instead of path
+</code></pre></div><h3 id="response"><a href="#response" class="header-anchor">#</a> Response</h3> <p>Responses in binary mode start with the error/status code as specified before, followed by the data if applicable.</p> <div class="language- extra-class"><pre><code>bin-response = %x80-FF [ cbor-data ]      ; response code and data
+</code></pre></div><h3 id="statement"><a href="#statement" class="header-anchor">#</a> Statement</h3> <p>Binary publication messages follow the same concept as in text mode.</p> <div class="language- extra-class"><pre><code>bin-statement = %x1F endpoint cbor-map    ; map containing object IDs and values
+</code></pre></div><h2 id="name-and-id-mapping"><a href="#name-and-id-mapping" class="header-anchor">#</a> Name and ID mapping</h2> <p>The examples in this chapter are based on the same data structure as introduced in the <a href="/thingset/branch/v0.4/2a_general.html#data-structure">General Concept chapter</a>, but each object is identified by the ID stated in the comment.</p> <p>The firmware developer is free to choose the IDs.</p> <p>In contrast to the text mode, the binary mode has a special <code>&quot;.name&quot;</code> endpoint (ID <code>0x17</code>) that allows to retrieve the name for a given ID using a <code>FETCH</code> request.</p> <p><strong>Example 1:</strong> Request name of object IDs <code>0x40</code> and <code>0x41</code></p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH request
+   17                                   # CBOR uint: 0x17 (.name endpoint)
+   82                                   # CBOR array (2 elements)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      18 41                             # CBOR uint: 0x41 (object ID)
+
+Response:
+85                                      # Content.
+   82                                   # CBOR array (2 elements)
+      65 4261745F56                     # CBOR string: &quot;Bat_V&quot;
+      65 4261745F41                     # CBOR string: &quot;Bat_A&quot;
+</code></pre></div><h2 id="read-data"><a href="#read-data" class="header-anchor">#</a> Read data</h2> <p>Similar to the text mode, the binary variants of the GET and FETCH functions also allow to read one or more data objects. The objects are identified by their parent object (endpoint of a path) and their IDs or their names.</p> <p>With the GET function it is possible to retrieve all child objects of a resource as a map of key/value pairs.</p> <p>The FETCH function can retrieve a specified subset of child item values. In addition to that, it can be used for device discovery, as it can list all childs of an object. Depending on the computing power and the network bandwidth, the childs can be requested as IDs or names.</p> <h3 id="using-data-object-names"><a href="#using-data-object-names" class="header-anchor">#</a> Using data object names</h3> <p>If a path (string containing names) is used to specify an endpoint, also names are used instead of IDs in the returned results.</p> <p><strong>Example 1:</strong> Retrieve all data of meas path (names + values)</p> <div class="language- extra-class"><pre><code>Request:
+01                                      # GET
+   66 6D656173                          # CBOR string: &quot;meas&quot;
+
+Response:
+85                                      # Content.
+   A3                                   # CBOR map (3 elements)
+      65 4261745F56                     # CBOR string: &quot;Bat_V&quot;
+      FA 41633333                       # CBOR float: 14.2
+      65 4261745F41                     # CBOR string: &quot;Bat_A&quot;
+      FA 40A428F6                       # CBOR float: 5.13
+      6C 416D6269656E745F64656743       # CBOR string: &quot;Ambient_degC&quot;
+      16                                # CBOR uint: 22
+</code></pre></div><p><strong>Example 2:</strong> Discover all child object names of the root object</p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH
+   60                                   # CBOR empty string (root object)
+   F7                                   # CBOR undefined as a wildcard
+
+Response:
+85                                      # Content.
+   89                                   # CBOR array (9 elements)
+      64 696E666F                       # CBOR string: &quot;info&quot;
+      64 6D656173                       # CBOR string: &quot;meas&quot;
+       ...
+</code></pre></div><p><strong>Example 3:</strong> Retrieve value for single data item <code>Bat_V</code></p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH
+   64 6D656173                          # CBOR string: &quot;meas&quot; (path)
+   65 4261745F56                        # CBOR string: &quot;Bat_V&quot; (object name)
+
+Response:
+85                                      # Content.
+   FA 41633333                          # CBOR float: 14.2
+</code></pre></div><h3 id="using-data-object-ids"><a href="#using-data-object-ids" class="header-anchor">#</a> Using data object IDs</h3> <p><strong>Example 4:</strong> Retrieve all data of meas path (IDs + values)</p> <div class="language- extra-class"><pre><code>Request:
+01                                      # GET
+   02                                   # CBOR uint: 0x02
+
+Response:
+85                                      # Content.
+   A3                                   # CBOR map (3 elements)
+      18 40                             # CBOR uint: 0x40
+      FA 41633333                       # CBOR float: 14.2
+      18 41                             # CBOR uint: 0x41
+      FA 40A428F6                       # CBOR float: 5.13
+      18 42                             # CBOR uint: 0x42
+      16                                # CBOR uint: 22
+</code></pre></div><p><strong>Example 5:</strong> Discover all child object IDs of the root object</p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH
+   00                                   # CBOR uint: 0x00 (root object)
+   F7                                   # CBOR undefined as a wildcard
+
+Response:
+85                                      # Content.
+   89                                   # CBOR array (9 elements)
+      01                                # CBOR uint: 0x01
+      02                                # CBOR uint: 0x02
+       ...
+</code></pre></div><p><strong>Example 6:</strong> Retrieve value for single data item <code>Bat_V</code> with ID <code>0x40</code></p> <div class="language- extra-class"><pre><code>Request:
+01                                      # GET
+   18 40                                # CBOR uint: 0x40 (object ID)
+
+Response:
+85                                      # Content.
+   FA 41633333                          # CBOR float: 14.2
+</code></pre></div><p><strong>Example 7:</strong> Retrieve multiple data items:</p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH
+   02                                   # CBOR uint: 0x02 (parent ID)
+   82                                   # CBOR array (2 elements)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      18 41                             # CBOR uint: 0x41 (object ID)
+
+Response:
+85                                      # Content.
+   82                                   # CBOR array (2 elements)
+      FA 41633333                       # CBOR float: 14.2
+      16                                # CBOR uint: 22
+</code></pre></div><h2 id="update-data"><a href="#update-data" class="header-anchor">#</a> Update data</h2> <p>Requests to overwrite the values of data items.</p> <p>The device must support a patch request using the same CBOR data type as used in the response of a GET or FETCH request for the given objects. Optionally, the device may also accept different data types (e.g. float32 instead of int) and convert the data internally.</p> <p>If the data type is not supported, an error status code (<code>0xAF</code>) is responded.</p> <p><strong>Example 1:</strong> Disable charging</p> <div class="language- extra-class"><pre><code>Request:
+07                                      # PATCH
+   05                                   # CBOR uint: 0x05
+   A1                                   # CBOR map (1 element)
+      18 90                             # CBOR uint: 0x90
+      F4                                # CBOR data: false
+
+Response:
+84                                      # Changed.
+</code></pre></div><p><strong>Example 2:</strong> Attempt to write read-only measurement values</p> <div class="language- extra-class"><pre><code>Request:
+07                                      # PATCH
+   02                                   # CBOR uint: 0x02
+   A1                                   # CBOR map (1 element)
+      18 40                             # CBOR uint: 0x40
+      FA 41633333                       # CBOR float32: 14.2
+
+Response:
+A3                                      # Forbidden.
+</code></pre></div><h2 id="create-data"><a href="#create-data" class="header-anchor">#</a> Create data</h2> <p>Appends new data to a data object in a similar way as in the text mode.</p> <p><strong>Example 1:</strong> Add item with ID <code>0x41</code> (<code>Bat_A</code>) to the <code>report</code> subset</p> <div class="language- extra-class"><pre><code>Request:
+02                                      # POST
+   18 20                                # CBOR uint: 0x20 (object ID)
+   18 41                                # CBOR uint: 0x41
+
+Response:
+81                                      # Created.
+</code></pre></div><h2 id="delete-data"><a href="#delete-data" class="header-anchor">#</a> Delete data</h2> <p>Removes data from an object of array type.</p> <p><strong>Example 1:</strong> Remove item with ID <code>0x41</code> (<code>Bat_A</code>) from <code>report</code> subset</p> <div class="language- extra-class"><pre><code>Request:
+04                                      # DELETE
+   18 20                                # CBOR uint: 0x20 (object ID)
+   18 41                                # CBOR uint: 0x41
+
+Response:
+82                                      # Deleted.
+</code></pre></div><h2 id="execute-function"><a href="#execute-function" class="header-anchor">#</a> Execute function</h2> <p>For execution of a function, the same POST request is used as when creating data. The device decides based on the type of the endpoint whether the request is a function call or a request to create data.</p> <p><strong>Example 1:</strong> Reset the device</p> <div class="language- extra-class"><pre><code>Request:
+02                                      # POST
+   18 E0                                # CBOR uint: 0xE0 (object ID)
+   80                                   # CBOR empty array
+
+Response:
+83                                      # Valid.
+</code></pre></div><p>Note that the endpoint is the object of the executable function itself. Data can be passed to the called function as the second parameter, but the <code>x-reset</code> function does not require any parameters, so it receives an empty array.</p> <h2 id="published-statements"><a href="#published-statements" class="header-anchor">#</a> Published statements</h2> <p>In contrast to text mode, published statements in binary mode only contain the values and not the corresponding names or IDs in order to reduce payload data as much as possible.</p> <p><strong>Example 1:</strong> A statement containing the <code>report</code> subset, sent out by the device every 10 seconds</p> <div class="language- extra-class"><pre><code>1F
+   18 20                                # CBOR uint: 0x20 (object ID)
+   83                                   # CBOR array (3 elements)
+      1A 1B7561E0                       # CBOR uint: 460677600
+      FA 41633333                       # CBOR float: 14.2
+      16                                # CBOR uint: 22
+</code></pre></div><p>The corresponding IDs can be retrieved with a fetch request.</p> <p><strong>Example 2:</strong> Retrieve corresponding IDs for a received statement.</p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH
+   18 20                                # CBOR uint: 0x20 (object ID)
+   F7                                   # CBOR undefined
+
+Response:
+85                                      # Content.
+   83                                   # CBOR array (3 elements)
+      10                                # CBOR uint: 0x10 (object ID)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      18 42                             # CBOR uint: 0x42 (object ID)
+</code></pre></div><p>If the name of the object is supplied instead of the ID, also names are returned in the response.</p> <p><strong>Example 3:</strong> Retrieve corresponding names for a received statement.</p> <div class="language- extra-class"><pre><code>Request:
+05                                      # FETCH
+   66 7265706F7274                      # CBOR string: &quot;report&quot; (object name)
+   F7                                   # CBOR undefined
+
+Response:
+85                                      # Content.
+   83                                   # CBOR array (3 elements)
+      66 54696D655F73                   # CBOR string: &quot;Time_s&quot; (object name)
+      65 4261745F56                     # CBOR string: &quot;Bat_V&quot; (object name)
+      6C 416D6269656E745F64656743       # CBOR string: &quot;Ambient_degC&quot; (object name)
+</code></pre></div><p>If not all child nodes of one path fit into a single publication message (e.g. because the sizes of CAN and LoRa frames are limited to a few tens of bytes) the statement can be split. However, in this case the payload must contain the IDs together with the values, as otherwise the values cannot be mapped to the IDs anymore.</p> <p><strong>Example 4:</strong> A statement containing a part of the <code>report</code> subset.</p> <div class="language- extra-class"><pre><code>1F
+   18 20                                # CBOR uint: 0x20 (object ID)
+   A2                                   # CBOR map (2 elements)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      FA 41633333                       # CBOR float: 14.2
+      18 42                             # CBOR uint: 0x42 (object ID)
+      16                                # CBOR uint: 22
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/4/2021, 11:23:12 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/thingset/branch/v0.4/2b_text_mode.html" class="prev">
+        Text Mode
+      </a></span> <span class="next"><a href="/thingset/branch/v0.4/3a_serial.html">
+        Serial
+      </a>
+      →
+    </span></p></div>  <div class="footer">
+    Content provided by <a href="https://libre.solar">Libre Solar</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0 License</a> | <a href="https://libre.solar/about/contact/">Contact / Impressum</a></div></main></div><div class="global-ui"></div></div>
+    <script src="/thingset/branch/v0.4/assets/js/app.7e1b989c.js" defer></script><script src="/thingset/branch/v0.4/assets/js/2.d1779d51.js" defer></script><script src="/thingset/branch/v0.4/assets/js/3.b5a90050.js" defer></script><script src="/thingset/branch/v0.4/assets/js/17.76ae0be1.js" defer></script>
+  </body>
+</html>

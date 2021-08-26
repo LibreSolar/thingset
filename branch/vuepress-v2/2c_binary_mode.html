@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"><link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/favicons/favicon.ico"><meta name="msapplication-TileColor" content="#2b5797"><meta name="msapplication-config" content="/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><title>Binary Mode | ThingSet Protocol Specification</title><meta name="description" content="The ThingSet protocol provides a consistent, standardized way to configure, monitor and control ressource-constrained devices via different communication interfaces like Serial, LoRa, USB, Bluetooth or CAN."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.23">
+    <link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/runtime~app.af676c0b.js" as="script"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/css/styles.7f4258af.css" as="style"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/296.924a1455.js" as="script"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/app.df323b81.js" as="script">
+    <link rel="stylesheet" href="/thingset/branch/vuepress-v2/assets/css/styles.7f4258af.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><header class="navbar"><div class="toggle-sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><span><a href="/thingset/branch/vuepress-v2/" class=""><img class="logo" src="/thingset/branch/vuepress-v2/favicons/apple-touch-icon.png" alt="ThingSet Protocol Specification"><span class="site-name can-hide">ThingSet Protocol Specification</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/" class="nav-link" aria-label="v0.4 (current)"><!--[--><!--]--> v0.4 (current) <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.3/" class="nav-link" aria-label="v0.3"><!--[--><!--]--> v0.3 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.2/" class="nav-link" aria-label="v0.2"><!--[--><!--]--> v0.2 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.1/" class="nav-link" aria-label="v0.1"><!--[--><!--]--> v0.1 <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/" class="nav-link" aria-label="v0.4 (current)"><!--[--><!--]--> v0.4 (current) <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.3/" class="nav-link" aria-label="v0.3"><!--[--><!--]--> v0.3 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.2/" class="nav-link" aria-label="v0.2"><!--[--><!--]--> v0.2 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.1/" class="nav-link" aria-label="v0.1"><!--[--><!--]--> v0.1 <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--[--><p class="sidebar-heading sidebar-item">Why ThingSet?</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/1a_introduction.html" class="nav-link sidebar-item" aria-label="Introduction"><!--[--><!--]--> Introduction <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/1b_existing_solutions.html" class="nav-link sidebar-item" aria-label="Existing Standards"><!--[--><!--]--> Existing Standards <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--[--><p class="sidebar-heading sidebar-item active">Application Layer</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/2a_general.html" class="nav-link sidebar-item" aria-label="General Concept"><!--[--><!--]--> General Concept <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/2b_text_mode.html" class="nav-link sidebar-item" aria-label="Text Mode"><!--[--><!--]--> Text Mode <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html" class="router-link-active router-link-exact-active nav-link router-link-active sidebar-item active" aria-label="Binary Mode"><!--[--><!--]--> Binary Mode <!--[--><!--]--></a><ul class="sidebar-sub-items"><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#requests" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Requests"><!--[--><!--]--> Requests <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#response" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Response"><!--[--><!--]--> Response <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#statement" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Statement"><!--[--><!--]--> Statement <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#name-and-id-mapping" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Name and ID mapping"><!--[--><!--]--> Name and ID mapping <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#read-data" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Read data"><!--[--><!--]--> Read data <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#update-data" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Update data"><!--[--><!--]--> Update data <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#create-data" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Create data"><!--[--><!--]--> Create data <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#delete-data" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Delete data"><!--[--><!--]--> Delete data <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#execute-function" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Execute function"><!--[--><!--]--> Execute function <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/2c_binary_mode.html#published-statements" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Published statements"><!--[--><!--]--> Published statements <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--></li></ul><!--]--><!--[--><p class="sidebar-heading sidebar-item">Lower Layers</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/3a_serial.html" class="nav-link sidebar-item" aria-label="Serial"><!--[--><!--]--> Serial <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/3b_can.html" class="nav-link sidebar-item" aria-label="CAN"><!--[--><!--]--> CAN <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/3c_lorawan.html" class="nav-link sidebar-item" aria-label="LoRaWAN"><!--[--><!--]--> LoRaWAN <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--[--><p class="sidebar-heading sidebar-item">Protocol Mapping</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/4a_http.html" class="nav-link sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/4b_coap.html" class="nav-link sidebar-item" aria-label="CoAP"><!--[--><!--]--> CoAP <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/4c_mqtt.html" class="nav-link sidebar-item" aria-label="MQTT"><!--[--><!--]--> MQTT <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--[--><p class="sidebar-heading sidebar-item">Tools</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/5a_serial.html" class="nav-link sidebar-item" aria-label="Serial"><!--[--><!--]--> Serial <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/5b_can.html" class="nav-link sidebar-item" aria-label="CAN bus"><!--[--><!--]--> CAN bus <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--]--></ul><!--[--><!--]--></aside><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="binary-mode" tabindex="-1"><a class="header-anchor" href="#binary-mode" aria-hidden="true">#</a> Binary Mode</h1><p>In the binary mode, the data is encoded using the CBOR format. The data structure is the same as in text mode, but numeric object IDs are used as identifiers by default instead of the object names.</p><p>The length of the entire request or response is not encoded in the ThingSet protocol, but can be determined from the CBOR format. Packet length as well as checksums should be encoded in lower layer protocols. It is assumed that the parser always receives a complete request.</p><p>The <strong>target</strong> of the binary mod is to work with as little payload data as possible. Hence, published statements only contain values and the corresponding IDs or names are only sent once at startup or can be requested manually later.</p><p>The <strong>main challenge</strong> is to still be fully discoverable via the binary mode without requiring previous knowledge of the data exposed by the device.</p><h3 id="requests" tabindex="-1"><a class="header-anchor" href="#requests" aria-hidden="true">#</a> Requests</h3><p>Each request message consists of a first byte as the request method identifier, a path or ID specifying the endpoint of the request and CBOR data as payload (if applicable).</p><pre><code>bin-request = bin-get / bin-post / bin-delete / bin-fetch / bin-ipatch
+
+bin-get    = %x01 endpoint
+
+bin-post   = %x02 endpoint cbor-data      ; exec or create is determined
+                                          ; based on data object type
+
+bin-delete = %x04 endpoint cbor-data
+
+bin-fetch  = %x05 endpoint ( cbor-array   ; IDs or names of requested data
+                           / %xF7 )       ; CBOR undefined: request array of
+                                          ; all IDs or names behind endpoint
+
+bin-ipatch = %x07 endpoint cbor-map
+
+endpoint   = path         ; CBOR string: path same as text mode
+           / parent-id    ; CBOR uint: parent object ID instead of path
+</code></pre><h3 id="response" tabindex="-1"><a class="header-anchor" href="#response" aria-hidden="true">#</a> Response</h3><p>Responses in binary mode start with the error/status code as specified before, followed by the data if applicable.</p><pre><code>bin-response = %x80-FF [ cbor-data ]      ; response code and data
+</code></pre><h3 id="statement" tabindex="-1"><a class="header-anchor" href="#statement" aria-hidden="true">#</a> Statement</h3><p>Binary publication messages follow the same concept as in text mode.</p><pre><code>bin-statement = %x1F endpoint cbor-map    ; map containing object IDs and values
+</code></pre><h2 id="name-and-id-mapping" tabindex="-1"><a class="header-anchor" href="#name-and-id-mapping" aria-hidden="true">#</a> Name and ID mapping</h2><p>The examples in this chapter are based on the same data structure as introduced in the <a href="/thingset/branch/vuepress-v2/2a_general.html#data-structure" class="">General Concept chapter</a>, but each object is identified by the ID stated in the comment.</p><p>The firmware developer is free to choose the IDs.</p><p>In contrast to the text mode, the binary mode has a special <code>&quot;.name&quot;</code> endpoint (ID <code>0x17</code>) that allows to retrieve the name for a given ID using a <code>FETCH</code> request.</p><p><strong>Example 1:</strong> Request name of object IDs <code>0x40</code> and <code>0x41</code></p><pre><code>Request:
+05                                      # FETCH request
+   17                                   # CBOR uint: 0x17 (.name endpoint)
+   82                                   # CBOR array (2 elements)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      18 41                             # CBOR uint: 0x41 (object ID)
+
+Response:
+85                                      # Content.
+   82                                   # CBOR array (2 elements)
+      65 4261745F56                     # CBOR string: &quot;Bat_V&quot;
+      65 4261745F41                     # CBOR string: &quot;Bat_A&quot;
+</code></pre><h2 id="read-data" tabindex="-1"><a class="header-anchor" href="#read-data" aria-hidden="true">#</a> Read data</h2><p>Similar to the text mode, the binary variants of the GET and FETCH functions also allow to read one or more data objects. The objects are identified by their parent object (endpoint of a path) and their IDs or their names.</p><p>With the GET function it is possible to retrieve all child objects of a resource as a map of key/value pairs.</p><p>The FETCH function can retrieve a specified subset of child item values. In addition to that, it can be used for device discovery, as it can list all childs of an object. Depending on the computing power and the network bandwidth, the childs can be requested as IDs or names.</p><h3 id="using-data-object-names" tabindex="-1"><a class="header-anchor" href="#using-data-object-names" aria-hidden="true">#</a> Using data object names</h3><p>If a path (string containing names) is used to specify an endpoint, also names are used instead of IDs in the returned results.</p><p><strong>Example 1:</strong> Retrieve all data of meas path (names + values)</p><pre><code>Request:
+01                                      # GET
+   66 6D656173                          # CBOR string: &quot;meas&quot;
+
+Response:
+85                                      # Content.
+   A3                                   # CBOR map (3 elements)
+      65 4261745F56                     # CBOR string: &quot;Bat_V&quot;
+      FA 41633333                       # CBOR float: 14.2
+      65 4261745F41                     # CBOR string: &quot;Bat_A&quot;
+      FA 40A428F6                       # CBOR float: 5.13
+      6C 416D6269656E745F64656743       # CBOR string: &quot;Ambient_degC&quot;
+      16                                # CBOR uint: 22
+</code></pre><p><strong>Example 2:</strong> Discover all child object names of the root object</p><pre><code>Request:
+05                                      # FETCH
+   60                                   # CBOR empty string (root object)
+   F7                                   # CBOR undefined as a wildcard
+
+Response:
+85                                      # Content.
+   89                                   # CBOR array (9 elements)
+      64 696E666F                       # CBOR string: &quot;info&quot;
+      64 6D656173                       # CBOR string: &quot;meas&quot;
+       ...
+</code></pre><p><strong>Example 3:</strong> Retrieve value for single data item <code>Bat_V</code></p><pre><code>Request:
+05                                      # FETCH
+   64 6D656173                          # CBOR string: &quot;meas&quot; (path)
+   65 4261745F56                        # CBOR string: &quot;Bat_V&quot; (object name)
+
+Response:
+85                                      # Content.
+   FA 41633333                          # CBOR float: 14.2
+</code></pre><h3 id="using-data-object-ids" tabindex="-1"><a class="header-anchor" href="#using-data-object-ids" aria-hidden="true">#</a> Using data object IDs</h3><p><strong>Example 4:</strong> Retrieve all data of meas path (IDs + values)</p><pre><code>Request:
+01                                      # GET
+   02                                   # CBOR uint: 0x02
+
+Response:
+85                                      # Content.
+   A3                                   # CBOR map (3 elements)
+      18 40                             # CBOR uint: 0x40
+      FA 41633333                       # CBOR float: 14.2
+      18 41                             # CBOR uint: 0x41
+      FA 40A428F6                       # CBOR float: 5.13
+      18 42                             # CBOR uint: 0x42
+      16                                # CBOR uint: 22
+</code></pre><p><strong>Example 5:</strong> Discover all child object IDs of the root object</p><pre><code>Request:
+05                                      # FETCH
+   00                                   # CBOR uint: 0x00 (root object)
+   F7                                   # CBOR undefined as a wildcard
+
+Response:
+85                                      # Content.
+   89                                   # CBOR array (9 elements)
+      01                                # CBOR uint: 0x01
+      02                                # CBOR uint: 0x02
+       ...
+</code></pre><p><strong>Example 6:</strong> Retrieve value for single data item <code>Bat_V</code> with ID <code>0x40</code></p><pre><code>Request:
+01                                      # GET
+   18 40                                # CBOR uint: 0x40 (object ID)
+
+Response:
+85                                      # Content.
+   FA 41633333                          # CBOR float: 14.2
+</code></pre><p><strong>Example 7:</strong> Retrieve multiple data items:</p><pre><code>Request:
+05                                      # FETCH
+   02                                   # CBOR uint: 0x02 (parent ID)
+   82                                   # CBOR array (2 elements)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      18 41                             # CBOR uint: 0x41 (object ID)
+
+Response:
+85                                      # Content.
+   82                                   # CBOR array (2 elements)
+      FA 41633333                       # CBOR float: 14.2
+      16                                # CBOR uint: 22
+</code></pre><h2 id="update-data" tabindex="-1"><a class="header-anchor" href="#update-data" aria-hidden="true">#</a> Update data</h2><p>Requests to overwrite the values of data items.</p><p>The device must support a patch request using the same CBOR data type as used in the response of a GET or FETCH request for the given objects. Optionally, the device may also accept different data types (e.g. float32 instead of int) and convert the data internally.</p><p>If the data type is not supported, an error status code (<code>0xAF</code>) is responded.</p><p><strong>Example 1:</strong> Disable charging</p><pre><code>Request:
+07                                      # PATCH
+   05                                   # CBOR uint: 0x05
+   A1                                   # CBOR map (1 element)
+      18 90                             # CBOR uint: 0x90
+      F4                                # CBOR data: false
+
+Response:
+84                                      # Changed.
+</code></pre><p><strong>Example 2:</strong> Attempt to write read-only measurement values</p><pre><code>Request:
+07                                      # PATCH
+   02                                   # CBOR uint: 0x02
+   A1                                   # CBOR map (1 element)
+      18 40                             # CBOR uint: 0x40
+      FA 41633333                       # CBOR float32: 14.2
+
+Response:
+A3                                      # Forbidden.
+</code></pre><h2 id="create-data" tabindex="-1"><a class="header-anchor" href="#create-data" aria-hidden="true">#</a> Create data</h2><p>Appends new data to a data object in a similar way as in the text mode.</p><p><strong>Example 1:</strong> Add item with ID <code>0x41</code> (<code>Bat_A</code>) to the <code>report</code> subset</p><pre><code>Request:
+02                                      # POST
+   18 20                                # CBOR uint: 0x20 (object ID)
+   18 41                                # CBOR uint: 0x41
+
+Response:
+81                                      # Created.
+</code></pre><h2 id="delete-data" tabindex="-1"><a class="header-anchor" href="#delete-data" aria-hidden="true">#</a> Delete data</h2><p>Removes data from an object of array type.</p><p><strong>Example 1:</strong> Remove item with ID <code>0x41</code> (<code>Bat_A</code>) from <code>report</code> subset</p><pre><code>Request:
+04                                      # DELETE
+   18 20                                # CBOR uint: 0x20 (object ID)
+   18 41                                # CBOR uint: 0x41
+
+Response:
+82                                      # Deleted.
+</code></pre><h2 id="execute-function" tabindex="-1"><a class="header-anchor" href="#execute-function" aria-hidden="true">#</a> Execute function</h2><p>For execution of a function, the same POST request is used as when creating data. The device decides based on the type of the endpoint whether the request is a function call or a request to create data.</p><p><strong>Example 1:</strong> Reset the device</p><pre><code>Request:
+02                                      # POST
+   18 E0                                # CBOR uint: 0xE0 (object ID)
+   80                                   # CBOR empty array
+
+Response:
+83                                      # Valid.
+</code></pre><p>Note that the endpoint is the object of the executable function itself. Data can be passed to the called function as the second parameter, but the <code>x-reset</code> function does not require any parameters, so it receives an empty array.</p><h2 id="published-statements" tabindex="-1"><a class="header-anchor" href="#published-statements" aria-hidden="true">#</a> Published statements</h2><p>In contrast to text mode, published statements in binary mode only contain the values and not the corresponding names or IDs in order to reduce payload data as much as possible.</p><p><strong>Example 1:</strong> A statement containing the <code>report</code> subset, sent out by the device every 10 seconds</p><pre><code>1F
+   18 20                                # CBOR uint: 0x20 (object ID)
+   83                                   # CBOR array (3 elements)
+      1A 1B7561E0                       # CBOR uint: 460677600
+      FA 41633333                       # CBOR float: 14.2
+      16                                # CBOR uint: 22
+</code></pre><p>The corresponding IDs can be retrieved with a fetch request.</p><p><strong>Example 2:</strong> Retrieve corresponding IDs for a received statement.</p><pre><code>Request:
+05                                      # FETCH
+   18 20                                # CBOR uint: 0x20 (object ID)
+   F7                                   # CBOR undefined
+
+Response:
+85                                      # Content.
+   83                                   # CBOR array (3 elements)
+      10                                # CBOR uint: 0x10 (object ID)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      18 42                             # CBOR uint: 0x42 (object ID)
+</code></pre><p>If the name of the object is supplied instead of the ID, also names are returned in the response.</p><p><strong>Example 3:</strong> Retrieve corresponding names for a received statement.</p><pre><code>Request:
+05                                      # FETCH
+   66 7265706F7274                      # CBOR string: &quot;report&quot; (object name)
+   F7                                   # CBOR undefined
+
+Response:
+85                                      # Content.
+   83                                   # CBOR array (3 elements)
+      66 54696D655F73                   # CBOR string: &quot;Time_s&quot; (object name)
+      65 4261745F56                     # CBOR string: &quot;Bat_V&quot; (object name)
+      6C 416D6269656E745F64656743       # CBOR string: &quot;Ambient_degC&quot; (object name)
+</code></pre><p>If not all child nodes of one path fit into a single publication message (e.g. because the sizes of CAN and LoRa frames are limited to a few tens of bytes) the statement can be split. However, in this case the payload must contain the IDs together with the values, as otherwise the values cannot be mapped to the IDs anymore.</p><p><strong>Example 4:</strong> A statement containing a part of the <code>report</code> subset.</p><pre><code>1F
+   18 20                                # CBOR uint: 0x20 (object ID)
+   A2                                   # CBOR map (2 elements)
+      18 40                             # CBOR uint: 0x40 (object ID)
+      FA 41633333                       # CBOR float: 14.2
+      18 42                             # CBOR uint: 0x42 (object ID)
+      16                                # CBOR uint: 22
+</code></pre><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="nav-link external meta-item-label" href="https://github.com/LibreSolar/thingset/edit/vuepress-v2/docs/2c_binary_mode.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">8/11/2021, 8:20:48 PM</span></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"> ← <a href="/thingset/branch/vuepress-v2/2b_text_mode.html" class="nav-link" aria-label="Text Mode"><!--[--><!--]--> Text Mode <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--[--><div class="footer"><span style="padding:5px;"><a href="https://twitter.com/LibreSolar"><img src="/thingset/images/twitter-logo.svg" height="14"> Twitter</a></span><span style="padding:5px;"><a href="https://github.com/LibreSolar"><img src="/thingset/images/github-logo.svg" height="14"> GitHub</a></span> | <span style="padding:5px;">Content provided by The Libre Solar Project under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0 License</a></span> | <span style="padding:5px;"><a href="https://libre.solar/about/contact.html">Contact / Impressum</a></span></div><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script src="/thingset/branch/vuepress-v2/assets/js/runtime~app.af676c0b.js" defer></script><script src="/thingset/branch/vuepress-v2/assets/js/296.924a1455.js" defer></script><script src="/thingset/branch/vuepress-v2/assets/js/app.df323b81.js" defer></script>
+  </body>
+</html>

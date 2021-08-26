@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Functions | ThingSet Protocol Specification</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/thingset/branch/quickfix-example-4/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/thingset/branch/quickfix-example-4/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/thingset/branch/quickfix-example-4/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/thingset/branch/quickfix-example-4/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/thingset/branch/quickfix-example-4/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/thingset/branch/quickfix-example-4/favicons/favicon.ico">
+    <meta name="description" content="The ThingSet protocol provides a consistent, standardized way to configure, monitor and control ressource-constrained devices via different communication interfaces like Serial, LoRa, USB, Bluetooth or CAN.">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preload" href="/thingset/branch/quickfix-example-4/assets/css/0.styles.b182d6b0.css" as="style"><link rel="preload" href="/thingset/branch/quickfix-example-4/assets/js/app.e82a7297.js" as="script"><link rel="preload" href="/thingset/branch/quickfix-example-4/assets/js/2.f8dcb625.js" as="script"><link rel="preload" href="/thingset/branch/quickfix-example-4/assets/js/3.37d47788.js" as="script"><link rel="preload" href="/thingset/branch/quickfix-example-4/assets/js/24.06bf6126.js" as="script"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/10.bec7f89e.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/11.4eeabb36.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/12.df21bce6.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/13.c183f414.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/14.b52ab5a7.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/15.2f0b203a.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/16.3e711864.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/17.e7f4c269.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/18.f7132805.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/19.282eb6e5.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/20.fde02dae.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/21.0f4c9a5d.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/22.f407caf7.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/23.ef381cff.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/25.bfe5c9a8.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/26.9153cb6a.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/27.be77b6b6.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/28.9be914e5.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/29.9e7fa9c1.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/4.6408cc72.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/5.3e012dac.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/6.63efe20a.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/7.e9fa7449.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/8.3ff5aa83.js"><link rel="prefetch" href="/thingset/branch/quickfix-example-4/assets/js/9.ac70af2f.js">
+    <link rel="stylesheet" href="/thingset/branch/quickfix-example-4/assets/css/0.styles.b182d6b0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/thingset/branch/quickfix-example-4/" class="home-link router-link-active"><img src="/thingset/branch/quickfix-example-4/favicons/apple-touch-icon.png" alt="ThingSet Protocol Specification" class="logo"> <span class="site-name">ThingSet Protocol Specification</span></a> <div class="links"><div class="search-box can-hide"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="History Menu" class="dropdown-title"><span class="title">History</span> <span class="arrow down"></span></button> <button type="button" aria-label="History Menu" class="mobile-dropdown-title"><span class="title">History</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/thingset/branch/quickfix-example-4/" class="nav-link">
+  v0.3
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/quickfix-example-4/v0.2/" class="nav-link">
+  v0.2
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/quickfix-example-4/v0.1/" class="nav-link router-link-active">
+  v0.1
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="History Menu" class="dropdown-title"><span class="title">History</span> <span class="arrow down"></span></button> <button type="button" aria-label="History Menu" class="mobile-dropdown-title"><span class="title">History</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/thingset/branch/quickfix-example-4/" class="nav-link">
+  v0.3
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/quickfix-example-4/v0.2/" class="nav-link">
+  v0.2
+</a></li><li class="dropdown-item"><!----> <a href="/thingset/branch/quickfix-example-4/v0.1/" class="nav-link router-link-active">
+  v0.1
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Why ThingSet?</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/quickfix-example-4/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/thingset/branch/quickfix-example-4/1b_existing_solutions.html" class="sidebar-link">Existing Standards</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Application Layer</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/quickfix-example-4/2a_general.html" class="sidebar-link">General Concept</a></li><li><a href="/thingset/branch/quickfix-example-4/2b_text_mode.html" class="sidebar-link">Text Mode</a></li><li><a href="/thingset/branch/quickfix-example-4/2c_binary_mode.html" class="sidebar-link">Binary Mode</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Lower Layers</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/quickfix-example-4/3a_serial.html" class="sidebar-link">Serial</a></li><li><a href="/thingset/branch/quickfix-example-4/3b_can.html" class="sidebar-link">CAN</a></li><li><a href="/thingset/branch/quickfix-example-4/3c_lora.html" class="sidebar-link">LoRa</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Protocol Mapping</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/thingset/branch/quickfix-example-4/4a_http.html" class="sidebar-link">HTTP</a></li><li><a href="/thingset/branch/quickfix-example-4/4b_coap.html" class="sidebar-link">CoAP</a></li><li><a href="/thingset/branch/quickfix-example-4/4c_mqtt.html" class="sidebar-link">MQTT</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="functions"><a href="#functions" class="header-anchor">#</a> Functions</h1> <p>The first byte of a request contains either the function ID in binary format or a text-mode identifier (one of '!', ':' or '#'). Input data with unknown first byte is ignored.</p> <h3 id="text-mode"><a href="#text-mode" class="header-anchor">#</a> Text mode</h3> <p>Each request message consists of a function name (e.g. read) followed by valid JSON string containing the payload data. A request starts with an exclamation mark (!) in front of the function name.</p> <p>The response starts with a colon (😃 followed by the the status code and a plain text description of the status finished with a '.'. The description message content is not strictly specified and can be either the description from above table or a more verbose message. However, it must contain only one dot at the end of the description, signifying the end of the description.</p> <p>The following bytes after the dot contain the requested data. The end of the data is automatically recognized when the last character for a valid JSON text is received, e.g. '}'. In addition to that, the response must be finished with a newline (LF recommended, but CRLF also allowed).</p> <div class="language- extra-class"><pre><code>Request:
+!(name) (options) (JSON data)
+
+Response:
+:(status code) (status message). (JSON data)
+
+Publication message:
+# (JSON data)
+</code></pre></div><p>Some examples are shown below.</p> <h3 id="binary-mode"><a href="#binary-mode" class="header-anchor">#</a> Binary mode</h3> <p>In the binary mode, the values of data objects are encoded using the CBOR format. Thus, numbers are encoded using big endian format (most significant byte transferred first).</p> <p>The general format of a binary mode message:</p> <div class="language- extra-class"><pre><code>+-------------+====================+=============================================+
+| Function ID | Options (optional) | Payload data (object values in CBOR format) |
++-------------+====================+=============================================+
+
+Legend:
+---------  single byte
+=========  multiple bytes
+</code></pre></div><p>In order to minimize data consumption, the CBOR format is only used for the actual data object values (because data format and size are unknown). Well-known data structures like arrays of Data Object IDs in read requests are encoded directly using unsigned 16-bit integers (see below).</p> <p>The length of the entire request or response is not encoded in the ThingSet protocol. Packet length as well as checksums should be encoded in lower layer protocols. It is assumed that the parser always receives a complete request.</p> <p><em>Remark for future protocol versions:</em> If proven to be necessary, the data could be terminated with one 0xFF character at the end of each request. Therefore, 0xF is a reserved category ID.</p> <h2 id="read-data-object-id-0x01"><a href="#read-data-object-id-0x01" class="header-anchor">#</a> Read data object (ID 0x01)</h2> <p>The read function can read one or more data objects. The objects are identified by their ID (binary mode) or by their name (text-base mode).</p> <h4 id="text-mode-2"><a href="#text-mode-2" class="header-anchor">#</a> Text mode</h4> <p>The names of the data objects are passed to the function as a single string or as an array of strings.</p> <p>The response contains a status code and the requested data. If a single data object was requested, the returned data is also a single JSON primitive (number, string, true/fals, depending on data type). Multiple objects were requested, the response is an array containing the requested data objects in the same order.</p> <p>Example 1: Request single data object &quot;enableSwitch&quot;</p> <div class="language- extra-class"><pre><code>!read &quot;enableSwitch&quot;
+:0 Success. true
+</code></pre></div><p>Example 2: Request multiple data objects:</p> <div class="language- extra-class"><pre><code>!read [&quot;vBat&quot;, &quot;tAmbient&quot;]
+:0 Success. [15.2, 22]
+</code></pre></div><h3 id="binary-mode-2"><a href="#binary-mode-2" class="header-anchor">#</a> Binary mode</h3> <p>General format description:</p> <div class="language- extra-class"><pre><code>Request:
++------+========+     +========+
+| 0x01 | 0xYYYY | ... | 0xYYYY |
++------+========+     +========+
+
+Response:
++------+===========+     +===========+
+| 0xZZ | CBOR data | ... | CBOR data |
++------+===========+     +===========+
+
+0xYYYY: Function ID(s)
+0xZZ:   Response code (0x80 for success)
+</code></pre></div><p>Example 1: Request single data object &quot;enableSwitch&quot;</p> <div class="language- extra-class"><pre><code>Request:
+0x01                Function ID (read)
+    0x3001          Data Object ID (enableSwitch)
+
+Response:
+0x80                Status code (Success)
+    0xf5            CBOR data: true
+</code></pre></div><p>Example 2: Request multiple data objects:</p> <div class="language- extra-class"><pre><code>Request:
+0x01                Function ID (read)
+    0x4001          Data Object ID (vBat)
+    0x4002          Data Object ID (tAmbient)
+
+Response:
+0x80                    Status code (Success)
+    0xfa 0x41733333     CBOR data (float32): 15.2
+    0x16                CBOR data (integer): 22
+</code></pre></div><h2 id="write-data-object-0x02"><a href="#write-data-object-0x02" class="header-anchor">#</a> Write data object (0x02)</h2> <p>Requests to overwrite a data object.</p> <p>The device must support a write request using the same data type as used in the response of a read request for the given objects. Optionally, the device may also accept different data types (e.g. float32 instead of int) and convert the data internally.</p> <p>Data of settings will be written into persistent memory, so it is not allowed to change settings periodically. Only data types of category input might be changed regularly.</p> <p>If the data type is not supported, an error status code (34) is responded.</p> <h3 id="text-mode-3"><a href="#text-mode-3" class="header-anchor">#</a> Text mode</h3> <p>Example 1: Disable the switch</p> <div class="language- extra-class"><pre><code>!write {&quot;enableSwitch&quot; : false}
+:0 Success.
+</code></pre></div><p>Example 2: Attempt to write read-only measurement values (output category)</p> <div class="language- extra-class"><pre><code>!write { &quot;vBat&quot; : 15.2, &quot;tAmbient&quot; : 22 }
+:36 Access denied.
+</code></pre></div><h3 id="binary-mode-3"><a href="#binary-mode-3" class="header-anchor">#</a> Binary mode</h3> <p>General layout:</p> <div class="language- extra-class"><pre><code>Request:
++------+========+===========+     +========+===========+
+| 0x02 | 0xYYYY | CBOR data | ... | 0xYYYY | CBOR data |
++------+========+===========+     +========+===========+
+
+Response:
++------+
+| 0xZZ |
++------+
+
+0xYYYY: Data Object ID(s)
+0xZZ:   Response code (0x80 for success)
+</code></pre></div><p>Example 1: Disable the switch</p> <div class="language- extra-class"><pre><code>Request:
+0x02                Function ID (write)
+    0x3001          Data Object ID (enableSwitch)
+    0xf4            CBOR data: false
+
+Response:
+0x80                Status code: Success
+</code></pre></div><p>Example 2: Attempt to write read-only measurement values (output category)</p> <div class="language- extra-class"><pre><code>Request:
+0x02                    Function ID (write)
+    0x4001              Data Object ID (vBat)
+    0xfa 0x41733333     CBOR data (float32): 15.2
+    0x4002              Data Object ID (tAmbient)
+    0x16                CBOR data (integer): 22
+
+Response:
+0xa4                    Status code (Access denied)
+</code></pre></div><h2 id="list-data-objects-0x03"><a href="#list-data-objects-0x03" class="header-anchor">#</a> List data objects (0x03)</h2> <p>Useful function for device discovery, as it lists all available data objects or all data objects of one category.</p> <p>In binary mode, the data IDs are returned, in text mode, an array of strings.</p> <p>Only those data objects are returned which are at least readable. Thus, the result might differ after authentication.</p> <h3 id="text-mode-4"><a href="#text-mode-4" class="header-anchor">#</a> Text mode</h3> <p>Example 1: List all values in category output</p> <div class="language- extra-class"><pre><code>!list &quot;output&quot;
+:0 Success. [ &quot;vBat&quot;, &quot;tAmbient&quot; ]
+</code></pre></div><p>Example 2: List all accessible values of the device.</p> <div class="language- extra-class"><pre><code>!list
+:0 Success. { &quot;output&quot; : [ &quot;vBat&quot;, &quot;tAmbient&quot; ], &quot;input&quot; : [ &quot;loadEn&quot; ]}
+</code></pre></div><h3 id="binary-mode-4"><a href="#binary-mode-4" class="header-anchor">#</a> Binary mode</h3> <p>General format description:</p> <div class="language- extra-class"><pre><code>Request:
++------+========+
+| 0x03 | 0xXXXX |
++------+========+
+
+Response:
++------+========+     +========+
+| 0xZZ | 0xYYYY | ... | 0xYYYY |
++------+========+     +========+
+
+0xXXXX: Data Object ID wildcard (all or specific category)
+0xYYYY: Data Object ID(s) belonging to requested category
+0xZZ:   Response code (0x80 for success)
+</code></pre></div><p>Example 1: List all values in category output</p> <div class="language- extra-class"><pre><code>Request:
+0x03                Function ID (list)
+    0x4000          Data Object ID wildcard (category &quot;output&quot;)
+
+Response:
+0x80                Status code (Success)
+    0x4001          Data Object ID (vBat)
+    0x4002          Data Object ID (tAmbient)
+</code></pre></div><p>Example 2: List all accessible values of the device.</p> <div class="language- extra-class"><pre><code>Request:
+0x03                Function ID (list)
+    0x0000          Data Object ID wildcard (all data objects)
+
+Response:
+0x80                Status code: (Success)
+    0x1001          Data Object ID (manufacturer)
+    0x3001          Data Object ID (enableSwitch)
+    0x4001          Data Object ID (vBat)
+    0x4002          Data Object ID (tAmbient)
+</code></pre></div><h2 id="get-data-object-name-0x04"><a href="#get-data-object-name-0x04" class="header-anchor">#</a> Get data object name (0x04)</h2> <p>Returns the name of a data object specified by its ID. This function makes sense for binary mode only, as the text-based mode uses the names directly.</p> <h3 id="binary-mode-5"><a href="#binary-mode-5" class="header-anchor">#</a> Binary mode</h3> <p>General format description:</p> <div class="language- extra-class"><pre><code>Request:
++------+========+     +========+
+| 0x04 | 0xYYYY | ... | 0xYYYY |
++------+========+     +========+
+
+Response:
++------+===========+     +===========+
+| 0xZZ | CBOR data | ... | CBOR data |
++------+===========+     +===========+
+
+0xYYYY: Data Object ID(s)
+0xZZ:   Response code (0x80 for success)
+</code></pre></div><p>Example 1: Request name of data object ID 0x4001 (vBat)</p> <div class="language- extra-class"><pre><code>Request:
+0x04                        Function ID (name)
+    0x4001                  Data Object ID (vBat)
+
+Response:
+0x80                        Status code: Success.
+    0x64 0x76426174         string of length 4: &quot;vBat&quot;
+</code></pre></div><p>Example 2: Request name of multiple data objects</p> <div class="language- extra-class"><pre><code>Request:
+0x04                            Function ID (name)
+    0x4001                      Data Object ID (vBat)
+    0x4002                      Data Object ID (tAmbient)
+
+Response:
+0x80                            Status code: Success.
+    0x64 0x76426174             CBOR data (4-byte string): &quot;vBat&quot;
+    0x68 0x74416D6269656E74     CBOR data (8-byte string): &quot;tAmbient&quot;
+</code></pre></div><h2 id="preliminary-publication-request-0x05"><a href="#preliminary-publication-request-0x05" class="header-anchor">#</a> PRELIMINARY: Publication request (0x05)</h2> <p><em>Remark: It should be possible to tell the device to publish certain data on a regular basis through a defined communication channel (UART, CAN, LoRa, etc.). It is not feasible to define different publication intervals and communication channels for each data object, as this would create lots of programming effort. On the other hand, pre-defined fixed intervals are maybe not flexible enough.</em></p> <p><em>Good ideas for simple protocol layout are welcome!</em></p> <h3 id="text-mode-5"><a href="#text-mode-5" class="header-anchor">#</a> Text mode</h3> <p>Example 1: Publish two values every 1000 milliseconds</p> <div class="language- extra-class"><pre><code>!pub 1000 [&quot;vBat&quot;, &quot;tAmbient&quot;]
+:0 Success.
+</code></pre></div><p>Now, every second the following message is sent by the device:</p> <div class="language- extra-class"><pre><code># {&quot;vBat&quot;:15.2,&quot;tAmbient&quot;:22}
+</code></pre></div><h2 id="preliminary-authentication-0x06"><a href="#preliminary-authentication-0x06" class="header-anchor">#</a> PRELIMINARY: Authentication (0x06)</h2> <p>Requests a challenge from the device to authenticate using secret password + hashing function.</p> <p>Procedure of authentication:</p> <ol><li>The client requests a challenge from the device.</li> <li>The device responds with the challenge (random number, length t.b.d.)</li> <li>The client generates a response code based on the received challenge and the secret password. The response code is hashed (algorithm t.b.d., maybe SHA-3) and sent to the device.</li> <li>The device calculates the same response code (with the same secret password stored in the device) and compares it with the received code. If both math, authentication was successful.</li></ol> <h4 id="text-mode-6"><a href="#text-mode-6" class="header-anchor">#</a> Text mode</h4> <p>If the auth request is empty, a new challenge is responded. In the second request, the calculated response code follows after the auth request. In case of successful authentication, status code 0 is responded (without additional data).</p> <div class="language- extra-class"><pre><code>!auth
+:0 Success. &lt;challenge&gt;
+
+!auth &lt;response code&gt;
+:0 Success.
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/13/2020, 9:22:38 AM</span></div></footer> <!---->  <div class="footer">
+    Content provided by <a href="https://libre.solar">Libre Solar</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0 License</a> | <a href="https://libre.solar/about/contact/">Contact / Impressum</a></div></main></div><div class="global-ui"></div></div>
+    <script src="/thingset/branch/quickfix-example-4/assets/js/app.e82a7297.js" defer></script><script src="/thingset/branch/quickfix-example-4/assets/js/2.f8dcb625.js" defer></script><script src="/thingset/branch/quickfix-example-4/assets/js/3.37d47788.js" defer></script><script src="/thingset/branch/quickfix-example-4/assets/js/24.06bf6126.js" defer></script>
+  </body>
+</html>

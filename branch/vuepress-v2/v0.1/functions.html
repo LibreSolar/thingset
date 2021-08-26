@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"><link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/favicons/favicon.ico"><meta name="msapplication-TileColor" content="#2b5797"><meta name="msapplication-config" content="/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><title>Functions | ThingSet Protocol Specification</title><meta name="description" content="The ThingSet protocol provides a consistent, standardized way to configure, monitor and control ressource-constrained devices via different communication interfaces like Serial, LoRa, USB, Bluetooth or CAN."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.23">
+    <link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/runtime~app.af676c0b.js" as="script"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/css/styles.7f4258af.css" as="style"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/296.924a1455.js" as="script"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/app.df323b81.js" as="script">
+    <link rel="stylesheet" href="/thingset/branch/vuepress-v2/assets/css/styles.7f4258af.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><header class="navbar"><div class="toggle-sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><span><a href="/thingset/branch/vuepress-v2/" class=""><img class="logo" src="/thingset/branch/vuepress-v2/favicons/apple-touch-icon.png" alt="ThingSet Protocol Specification"><span class="site-name can-hide">ThingSet Protocol Specification</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/" class="nav-link" aria-label="v0.4 (current)"><!--[--><!--]--> v0.4 (current) <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.3/" class="nav-link" aria-label="v0.3"><!--[--><!--]--> v0.3 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.2/" class="nav-link" aria-label="v0.2"><!--[--><!--]--> v0.2 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.1/" class="nav-link router-link-active" aria-label="v0.1"><!--[--><!--]--> v0.1 <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/" class="nav-link" aria-label="v0.4 (current)"><!--[--><!--]--> v0.4 (current) <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.3/" class="nav-link" aria-label="v0.3"><!--[--><!--]--> v0.3 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.2/" class="nav-link" aria-label="v0.2"><!--[--><!--]--> v0.2 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.1/" class="nav-link router-link-active" aria-label="v0.1"><!--[--><!--]--> v0.1 <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--[--><a href="/thingset/branch/vuepress-v2/v0.1/general.html" class="nav-link sidebar-heading sidebar-item" aria-label="General Concept"><!--[--><!--]--> General Concept <!--[--><!--]--></a><!----><!--]--><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html" class="router-link-active router-link-exact-active nav-link router-link-active sidebar-heading sidebar-item active" aria-label="Functions"><!--[--><!--]--> Functions <!--[--><!--]--></a><ul class=""><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#text-mode" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Text mode"><!--[--><!--]--> Text mode <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#binary-mode" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Binary mode"><!--[--><!--]--> Binary mode <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#read-data-object-id-0x01" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Read data object (ID 0x01)"><!--[--><!--]--> Read data object (ID 0x01) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#write-data-object-0x02" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Write data object (0x02)"><!--[--><!--]--> Write data object (0x02) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#list-data-objects-0x03" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="List data objects (0x03)"><!--[--><!--]--> List data objects (0x03) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#get-data-object-name-0x04" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Get data object name (0x04)"><!--[--><!--]--> Get data object name (0x04) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#preliminary-publication-request-0x05" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="PRELIMINARY: Publication request (0x05)"><!--[--><!--]--> PRELIMINARY: Publication request (0x05) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.1/functions.html#preliminary-authentication-0x06" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="PRELIMINARY: Authentication (0x06)"><!--[--><!--]--> PRELIMINARY: Authentication (0x06) <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--[--><a href="/thingset/branch/vuepress-v2/v0.1/can.html" class="nav-link sidebar-heading sidebar-item" aria-label="CAN lower layer"><!--[--><!--]--> CAN lower layer <!--[--><!--]--></a><!----><!--]--><!--]--></ul><!--[--><!--]--></aside><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="functions" tabindex="-1"><a class="header-anchor" href="#functions" aria-hidden="true">#</a> Functions</h1><p>The first byte of a request contains either the function ID in binary format or a text-mode identifier (one of &#39;!&#39;, &#39;:&#39; or &#39;#&#39;). Input data with unknown first byte is ignored.</p><h3 id="text-mode" tabindex="-1"><a class="header-anchor" href="#text-mode" aria-hidden="true">#</a> Text mode</h3><p>Each request message consists of a function name (e.g. read) followed by valid JSON string containing the payload data. A request starts with an exclamation mark (!) in front of the function name.</p><p>The response starts with a colon (😃 followed by the the status code and a plain text description of the status finished with a &#39;.&#39;. The description message content is not strictly specified and can be either the description from above table or a more verbose message. However, it must contain only one dot at the end of the description, signifying the end of the description.</p><p>The following bytes after the dot contain the requested data. The end of the data is automatically recognized when the last character for a valid JSON text is received, e.g. &#39;}&#39;. In addition to that, the response must be finished with a newline (LF recommended, but CRLF also allowed).</p><pre><code>Request:
+!(name) (options) (JSON data)
+
+Response:
+:(status code) (status message). (JSON data)
+
+Publication message:
+# (JSON data)
+</code></pre><p>Some examples are shown below.</p><h3 id="binary-mode" tabindex="-1"><a class="header-anchor" href="#binary-mode" aria-hidden="true">#</a> Binary mode</h3><p>In the binary mode, the values of data objects are encoded using the CBOR format. Thus, numbers are encoded using big endian format (most significant byte transferred first).</p><p>The general format of a binary mode message:</p><pre><code>+-------------+====================+=============================================+
+| Function ID | Options (optional) | Payload data (object values in CBOR format) |
++-------------+====================+=============================================+
+
+Legend:
+---------  single byte
+=========  multiple bytes
+</code></pre><p>In order to minimize data consumption, the CBOR format is only used for the actual data object values (because data format and size are unknown). Well-known data structures like arrays of Data Object IDs in read requests are encoded directly using unsigned 16-bit integers (see below).</p><p>The length of the entire request or response is not encoded in the ThingSet protocol. Packet length as well as checksums should be encoded in lower layer protocols. It is assumed that the parser always receives a complete request.</p><p><em>Remark for future protocol versions:</em> If proven to be necessary, the data could be terminated with one 0xFF character at the end of each request. Therefore, 0xF is a reserved category ID.</p><h2 id="read-data-object-id-0x01" tabindex="-1"><a class="header-anchor" href="#read-data-object-id-0x01" aria-hidden="true">#</a> Read data object (ID 0x01)</h2><p>The read function can read one or more data objects. The objects are identified by their ID (binary mode) or by their name (text-base mode).</p><h4 id="text-mode-1" tabindex="-1"><a class="header-anchor" href="#text-mode-1" aria-hidden="true">#</a> Text mode</h4><p>The names of the data objects are passed to the function as a single string or as an array of strings.</p><p>The response contains a status code and the requested data. If a single data object was requested, the returned data is also a single JSON primitive (number, string, true/fals, depending on data type). Multiple objects were requested, the response is an array containing the requested data objects in the same order.</p><p>Example 1: Request single data object &quot;enableSwitch&quot;</p><pre><code>!read &quot;enableSwitch&quot;
+:0 Success. true
+</code></pre><p>Example 2: Request multiple data objects:</p><pre><code>!read [&quot;vBat&quot;, &quot;tAmbient&quot;]
+:0 Success. [15.2, 22]
+</code></pre><h3 id="binary-mode-1" tabindex="-1"><a class="header-anchor" href="#binary-mode-1" aria-hidden="true">#</a> Binary mode</h3><p>General format description:</p><pre><code>Request:
++------+========+     +========+
+| 0x01 | 0xYYYY | ... | 0xYYYY |
++------+========+     +========+
+
+Response:
++------+===========+     +===========+
+| 0xZZ | CBOR data | ... | CBOR data |
++------+===========+     +===========+
+
+0xYYYY: Function ID(s)
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: Request single data object &quot;enableSwitch&quot;</p><pre><code>Request:
+0x01                Function ID (read)
+    0x3001          Data Object ID (enableSwitch)
+
+Response:
+0x80                Status code (Success)
+    0xf5            CBOR data: true
+</code></pre><p>Example 2: Request multiple data objects:</p><pre><code>Request:
+0x01                Function ID (read)
+    0x4001          Data Object ID (vBat)
+    0x4002          Data Object ID (tAmbient)
+
+Response:
+0x80                    Status code (Success)
+    0xfa 0x41733333     CBOR data (float32): 15.2
+    0x16                CBOR data (integer): 22
+</code></pre><h2 id="write-data-object-0x02" tabindex="-1"><a class="header-anchor" href="#write-data-object-0x02" aria-hidden="true">#</a> Write data object (0x02)</h2><p>Requests to overwrite a data object.</p><p>The device must support a write request using the same data type as used in the response of a read request for the given objects. Optionally, the device may also accept different data types (e.g. float32 instead of int) and convert the data internally.</p><p>Data of settings will be written into persistent memory, so it is not allowed to change settings periodically. Only data types of category input might be changed regularly.</p><p>If the data type is not supported, an error status code (34) is responded.</p><h3 id="text-mode-2" tabindex="-1"><a class="header-anchor" href="#text-mode-2" aria-hidden="true">#</a> Text mode</h3><p>Example 1: Disable the switch</p><pre><code>!write {&quot;enableSwitch&quot; : false}
+:0 Success.
+</code></pre><p>Example 2: Attempt to write read-only measurement values (output category)</p><pre><code>!write { &quot;vBat&quot; : 15.2, &quot;tAmbient&quot; : 22 }
+:36 Access denied.
+</code></pre><h3 id="binary-mode-2" tabindex="-1"><a class="header-anchor" href="#binary-mode-2" aria-hidden="true">#</a> Binary mode</h3><p>General layout:</p><pre><code>Request:
++------+========+===========+     +========+===========+
+| 0x02 | 0xYYYY | CBOR data | ... | 0xYYYY | CBOR data |
++------+========+===========+     +========+===========+
+
+Response:
++------+
+| 0xZZ |
++------+
+
+0xYYYY: Data Object ID(s)
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: Disable the switch</p><pre><code>Request:
+0x02                Function ID (write)
+    0x3001          Data Object ID (enableSwitch)
+    0xf4            CBOR data: false
+
+Response:
+0x80                Status code: Success
+</code></pre><p>Example 2: Attempt to write read-only measurement values (output category)</p><pre><code>Request:
+0x02                    Function ID (write)
+    0x4001              Data Object ID (vBat)
+    0xfa 0x41733333     CBOR data (float32): 15.2
+    0x4002              Data Object ID (tAmbient)
+    0x16                CBOR data (integer): 22
+
+Response:
+0xa4                    Status code (Access denied)
+</code></pre><h2 id="list-data-objects-0x03" tabindex="-1"><a class="header-anchor" href="#list-data-objects-0x03" aria-hidden="true">#</a> List data objects (0x03)</h2><p>Useful function for device discovery, as it lists all available data objects or all data objects of one category.</p><p>In binary mode, the data IDs are returned, in text mode, an array of strings.</p><p>Only those data objects are returned which are at least readable. Thus, the result might differ after authentication.</p><h3 id="text-mode-3" tabindex="-1"><a class="header-anchor" href="#text-mode-3" aria-hidden="true">#</a> Text mode</h3><p>Example 1: List all values in category output</p><pre><code>!list &quot;output&quot;
+:0 Success. [ &quot;vBat&quot;, &quot;tAmbient&quot; ]
+</code></pre><p>Example 2: List all accessible values of the device.</p><pre><code>!list
+:0 Success. { &quot;output&quot; : [ &quot;vBat&quot;, &quot;tAmbient&quot; ], &quot;input&quot; : [ &quot;loadEn&quot; ]}
+</code></pre><h3 id="binary-mode-3" tabindex="-1"><a class="header-anchor" href="#binary-mode-3" aria-hidden="true">#</a> Binary mode</h3><p>General format description:</p><pre><code>Request:
++------+========+
+| 0x03 | 0xXXXX |
++------+========+
+
+Response:
++------+========+     +========+
+| 0xZZ | 0xYYYY | ... | 0xYYYY |
++------+========+     +========+
+
+0xXXXX: Data Object ID wildcard (all or specific category)
+0xYYYY: Data Object ID(s) belonging to requested category
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: List all values in category output</p><pre><code>Request:
+0x03                Function ID (list)
+    0x4000          Data Object ID wildcard (category &quot;output&quot;)
+
+Response:
+0x80                Status code (Success)
+    0x4001          Data Object ID (vBat)
+    0x4002          Data Object ID (tAmbient)
+</code></pre><p>Example 2: List all accessible values of the device.</p><pre><code>Request:
+0x03                Function ID (list)
+    0x0000          Data Object ID wildcard (all data objects)
+
+Response:
+0x80                Status code: (Success)
+    0x1001          Data Object ID (manufacturer)
+    0x3001          Data Object ID (enableSwitch)
+    0x4001          Data Object ID (vBat)
+    0x4002          Data Object ID (tAmbient)
+</code></pre><h2 id="get-data-object-name-0x04" tabindex="-1"><a class="header-anchor" href="#get-data-object-name-0x04" aria-hidden="true">#</a> Get data object name (0x04)</h2><p>Returns the name of a data object specified by its ID. This function makes sense for binary mode only, as the text-based mode uses the names directly.</p><h3 id="binary-mode-4" tabindex="-1"><a class="header-anchor" href="#binary-mode-4" aria-hidden="true">#</a> Binary mode</h3><p>General format description:</p><pre><code>Request:
++------+========+     +========+
+| 0x04 | 0xYYYY | ... | 0xYYYY |
++------+========+     +========+
+
+Response:
++------+===========+     +===========+
+| 0xZZ | CBOR data | ... | CBOR data |
++------+===========+     +===========+
+
+0xYYYY: Data Object ID(s)
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: Request name of data object ID 0x4001 (vBat)</p><pre><code>Request:
+0x04                        Function ID (name)
+    0x4001                  Data Object ID (vBat)
+
+Response:
+0x80                        Status code: Success.
+    0x64 0x76426174         string of length 4: &quot;vBat&quot;
+</code></pre><p>Example 2: Request name of multiple data objects</p><pre><code>Request:
+0x04                            Function ID (name)
+    0x4001                      Data Object ID (vBat)
+    0x4002                      Data Object ID (tAmbient)
+
+Response:
+0x80                            Status code: Success.
+    0x64 0x76426174             CBOR data (4-byte string): &quot;vBat&quot;
+    0x68 0x74416D6269656E74     CBOR data (8-byte string): &quot;tAmbient&quot;
+</code></pre><h2 id="preliminary-publication-request-0x05" tabindex="-1"><a class="header-anchor" href="#preliminary-publication-request-0x05" aria-hidden="true">#</a> PRELIMINARY: Publication request (0x05)</h2><p><em>Remark: It should be possible to tell the device to publish certain data on a regular basis through a defined communication channel (UART, CAN, LoRa, etc.). It is not feasible to define different publication intervals and communication channels for each data object, as this would create lots of programming effort. On the other hand, pre-defined fixed intervals are maybe not flexible enough.</em></p><p><em>Good ideas for simple protocol layout are welcome!</em></p><h3 id="text-mode-4" tabindex="-1"><a class="header-anchor" href="#text-mode-4" aria-hidden="true">#</a> Text mode</h3><p>Example 1: Publish two values every 1000 milliseconds</p><pre><code>!pub 1000 [&quot;vBat&quot;, &quot;tAmbient&quot;]
+:0 Success.
+</code></pre><p>Now, every second the following message is sent by the device:</p><pre><code># {&quot;vBat&quot;:15.2,&quot;tAmbient&quot;:22}
+</code></pre><h2 id="preliminary-authentication-0x06" tabindex="-1"><a class="header-anchor" href="#preliminary-authentication-0x06" aria-hidden="true">#</a> PRELIMINARY: Authentication (0x06)</h2><p>Requests a challenge from the device to authenticate using secret password + hashing function.</p><p>Procedure of authentication:</p><ol><li>The client requests a challenge from the device.</li><li>The device responds with the challenge (random number, length t.b.d.)</li><li>The client generates a response code based on the received challenge and the secret password. The response code is hashed (algorithm t.b.d., maybe SHA-3) and sent to the device.</li><li>The device calculates the same response code (with the same secret password stored in the device) and compares it with the received code. If both math, authentication was successful.</li></ol><h4 id="text-mode-5" tabindex="-1"><a class="header-anchor" href="#text-mode-5" aria-hidden="true">#</a> Text mode</h4><p>If the auth request is empty, a new challenge is responded. In the second request, the calculated response code follows after the auth request. In case of successful authentication, status code 0 is responded (without additional data).</p><pre><code>!auth
+:0 Success. &lt;challenge&gt;
+
+!auth &lt;response code&gt;
+:0 Success.
+</code></pre><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="nav-link external meta-item-label" href="https://github.com/LibreSolar/thingset/edit/vuepress-v2/docs/v0.1/functions.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">8/11/2021, 8:20:48 PM</span></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"> ← <a href="/thingset/branch/vuepress-v2/v0.1/general.html" class="nav-link" aria-label="General Concept"><!--[--><!--]--> General Concept <!--[--><!--]--></a></span><span class="next"><a href="/thingset/branch/vuepress-v2/v0.1/can.html" class="nav-link" aria-label="CAN lower layer"><!--[--><!--]--> CAN lower layer <!--[--><!--]--></a> → </span></p></nav><!--[--><!--[--><div class="footer"><span style="padding:5px;"><a href="https://twitter.com/LibreSolar"><img src="/thingset/images/twitter-logo.svg" height="14"> Twitter</a></span><span style="padding:5px;"><a href="https://github.com/LibreSolar"><img src="/thingset/images/github-logo.svg" height="14"> GitHub</a></span> | <span style="padding:5px;">Content provided by The Libre Solar Project under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0 License</a></span> | <span style="padding:5px;"><a href="https://libre.solar/about/contact.html">Contact / Impressum</a></span></div><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script src="/thingset/branch/vuepress-v2/assets/js/runtime~app.af676c0b.js" defer></script><script src="/thingset/branch/vuepress-v2/assets/js/296.924a1455.js" defer></script><script src="/thingset/branch/vuepress-v2/assets/js/app.df323b81.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"><link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/favicons/favicon.ico"><meta name="msapplication-TileColor" content="#2b5797"><meta name="msapplication-config" content="/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><title>Protocol Functions | ThingSet Protocol Specification</title><meta name="description" content="The ThingSet protocol provides a consistent, standardized way to configure, monitor and control ressource-constrained devices via different communication interfaces like Serial, LoRa, USB, Bluetooth or CAN."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.23">
+    <link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/runtime~app.af676c0b.js" as="script"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/css/styles.7f4258af.css" as="style"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/296.924a1455.js" as="script"><link rel="preload" href="/thingset/branch/vuepress-v2/assets/js/app.df323b81.js" as="script">
+    <link rel="stylesheet" href="/thingset/branch/vuepress-v2/assets/css/styles.7f4258af.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><header class="navbar"><div class="toggle-sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><span><a href="/thingset/branch/vuepress-v2/" class=""><img class="logo" src="/thingset/branch/vuepress-v2/favicons/apple-touch-icon.png" alt="ThingSet Protocol Specification"><span class="site-name can-hide">ThingSet Protocol Specification</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/" class="nav-link" aria-label="v0.4 (current)"><!--[--><!--]--> v0.4 (current) <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.3/" class="nav-link" aria-label="v0.3"><!--[--><!--]--> v0.3 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.2/" class="nav-link router-link-active" aria-label="v0.2"><!--[--><!--]--> v0.2 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.1/" class="nav-link" aria-label="v0.1"><!--[--><!--]--> v0.1 <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="arrow down"></span></button><button class="mobile-dropdown-title" type="button" aria-label="History Menu"><span class="title">History</span><span class="right arrow"></span></button><ul style="display:none;" class="nav-dropdown"><!--[--><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/" class="nav-link" aria-label="v0.4 (current)"><!--[--><!--]--> v0.4 (current) <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.3/" class="nav-link" aria-label="v0.3"><!--[--><!--]--> v0.3 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.2/" class="nav-link router-link-active" aria-label="v0.2"><!--[--><!--]--> v0.2 <!--[--><!--]--></a></li><li class="dropdown-item"><a href="/thingset/branch/vuepress-v2/v0.1/" class="nav-link" aria-label="v0.1"><!--[--><!--]--> v0.1 <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--[--><p class="sidebar-heading sidebar-item">Why ThingSet?</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/v0.2/README.md" class="nav-link sidebar-item" aria-label="Introduction"><!--[--><!--]--> Introduction <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/v0.2/1b_existing_solutions.html" class="nav-link sidebar-item" aria-label="Existing Standards"><!--[--><!--]--> Existing Standards <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--[--><p class="sidebar-heading sidebar-item active">Application Layer</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/v0.2/2a_general.html" class="nav-link sidebar-item" aria-label="General Protocol Concept"><!--[--><!--]--> General Protocol Concept <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html" class="router-link-active router-link-exact-active nav-link router-link-active sidebar-item active" aria-label="Protocol Functions"><!--[--><!--]--> Protocol Functions <!--[--><!--]--></a><ul class="sidebar-sub-items"><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#text-mode" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Text mode"><!--[--><!--]--> Text mode <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#binary-mode" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Binary mode"><!--[--><!--]--> Binary mode <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#request-functions" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Request functions"><!--[--><!--]--> Request functions <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#response-functions-status-codes" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Response functions (status codes)"><!--[--><!--]--> Response functions (status codes) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#data-object-access-0x01-0x06" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Data object access (0x01-0x06)"><!--[--><!--]--> Data object access (0x01-0x06) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#list-data-objects" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="List data objects"><!--[--><!--]--> List data objects <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#write-data-object-s" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Write data object(s)"><!--[--><!--]--> Write data object(s) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#execute-0x0b" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Execute (0x0B)"><!--[--><!--]--> Execute (0x0B) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#get-data-object-name-0x0e" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Get data object name (0x0E)"><!--[--><!--]--> Get data object name (0x0E) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#authentication-0x10" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Authentication (0x10)"><!--[--><!--]--> Authentication (0x10) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#publication-request-0x12" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Publication request (0x12)"><!--[--><!--]--> Publication request (0x12) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#preliminary-logging-data-0x" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="PRELIMINARY: Logging data (0x??)"><!--[--><!--]--> PRELIMINARY: Logging data (0x??) <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/thingset/branch/vuepress-v2/v0.2/2b_functions.html#publication-message-0x1f" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="Publication message (0x1F)"><!--[--><!--]--> Publication message (0x1F) <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--></li></ul><!--]--><!--[--><p class="sidebar-heading sidebar-item">Lower Layers</p><ul class=""><li><!--[--><a href="/thingset/branch/vuepress-v2/v0.2/3a_serial.html" class="nav-link sidebar-item" aria-label="Serial"><!--[--><!--]--> Serial <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/v0.2/3b_can.html" class="nav-link sidebar-item" aria-label="CAN"><!--[--><!--]--> CAN <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a href="/thingset/branch/vuepress-v2/v0.2/3c_lora.html" class="nav-link sidebar-item" aria-label="LoRa"><!--[--><!--]--> LoRa <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--]--></ul><!--[--><!--]--></aside><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="protocol-functions" tabindex="-1"><a class="header-anchor" href="#protocol-functions" aria-hidden="true">#</a> Protocol Functions</h1><p>The first byte of a message contains either the function ID in binary format or a text-mode identifier (one of &#39;!&#39;, &#39;:&#39; or &#39;#&#39;). Input data with unknown first byte is ignored.</p><h3 id="text-mode" tabindex="-1"><a class="header-anchor" href="#text-mode" aria-hidden="true">#</a> Text mode</h3><p>Each request message consists of a function name (e.g. exec) followed by valid JSON string containing the payload data. A request starts with an exclamation mark (!) in front of the function name.</p><p>The response starts with a colon (😃 followed by the the status code and a plain text description of the status finished with a &#39;.&#39;. The description message content is not strictly specified and can be either the description from above table or a more verbose message. However, it must contain only one dot at the end of the description, signifying the end of the description.</p><p>The following bytes after the dot contain the requested data. The end of the data is automatically recognized when the last character for a valid JSON text is received, e.g. &#39;}&#39;. In addition to that, the response must be finished with a newline (LF recommended, but CRLF also allowed).</p><pre><code>Request:
+!(function name) (JSON data)
+
+Response:
+:(status code)(optional status message). (JSON data)
+
+Publication message:
+# (JSON data)
+</code></pre><p>Some examples are shown below.</p><h3 id="binary-mode" tabindex="-1"><a class="header-anchor" href="#binary-mode" aria-hidden="true">#</a> Binary mode</h3><p>In the binary mode, the data is encoded using the CBOR format. Numbers are encoded using big endian format (most significant byte transferred first).</p><p>The general format of a binary mode message:</p><pre><code>+-------------+===========+
+| Function ID | CBOR data |
++-------------+===========+
+
+Legend:
+---------  single byte
+=========  multiple bytes
+</code></pre><p>The data structure in binary mode is the same as in text mode, but the data is encoded in CBOR format and the Data Object IDs are used as identifiers instead of the names.</p><p>The length of the entire request or response is not encoded in the ThingSet protocol, but can be determined from the CBOR format. Packet length as well as checksums should be encoded in lower layer protocols. It is assumed that the parser always receives a complete request.</p><h3 id="request-functions" tabindex="-1"><a class="header-anchor" href="#request-functions" aria-hidden="true">#</a> Request functions</h3><table><thead><tr><th>Function ID</th><th>Function name</th><th>Description</th></tr></thead><tbody><tr><td>0x01 (1)</td><td>!info</td><td>List/read/write data object(s) of <em>info</em> category</td></tr><tr><td>0x02 (2)</td><td>!conf</td><td>List/read/write data object(s) of <em>conf</em> category</td></tr><tr><td>0x03 (3)</td><td>!input</td><td>List/read/write data object(s) of <em>input</em> category</td></tr><tr><td>0x04 (4)</td><td>!output</td><td>List/read/write data object(s) of <em>output</em> category</td></tr><tr><td>0x05 (5)</td><td>!rec</td><td>List/read/write data object(s) of <em>rec</em> category</td></tr><tr><td>0x06 (6)</td><td>!cal</td><td>List/read/write data object(s) of <em>cal</em> category</td></tr><tr><td>0x09 (9)</td><td>!</td><td>List/read data object(s) of any category (PRELIMINARY) </td></tr><tr><td>0x0B (11)</td><td>!exec</td><td>Execute function (remote procedure call)</td></tr><tr><td>0x0E (14)</td><td>!name</td><td>Get the name of a data object by ID</td></tr><tr><td>0x10 (16)</td><td>!auth</td><td>Authentication for access to access-restricted data objects</td></tr><tr><td>0x11 (17)</td><td>!log</td><td>Access log data of device</td></tr><tr><td>0x12 (18)</td><td>!pub</td><td>Request publication of data object(s)</td></tr><tr><td>0x1F (31)</td><td>#</td><td>Publication message for binary protocol</td></tr></tbody></table><p>Possible future request functions (not yet specified):</p><table><thead><tr><th>Function ID</th><th>Function name</th><th>Description</th></tr></thead><tbody><tr><td>?</td><td>ping</td><td>Ping a device</td></tr><tr><td>?</td><td>sync</td><td>Time synchronization</td></tr><tr><td>?</td><td>file</td><td>File access</td></tr><tr><td>?</td><td>dfu</td><td>Device firmware upgrade.</td></tr></tbody></table><h3 id="response-functions-status-codes" tabindex="-1"><a class="header-anchor" href="#response-functions-status-codes" aria-hidden="true">#</a> Response functions (status codes)</h3><table><thead><tr><th>Function ID</th><th>Status Code</th><th>Description</th></tr></thead><tbody><tr><td>0x80 (128)</td><td>0x00 (0)</td><td>Success.</td></tr><tr><td>0x81 (129)</td><td>0x01 (1)</td><td>Partial Success. (e.g. not all data values could be changed)</td></tr><tr><td>0xA0 (160)</td><td>0x20 (32)</td><td>General Error.</td></tr><tr><td>0xA1 (161)</td><td>0x21 (33)</td><td>Unknown/unsupported function.</td></tr><tr><td>0xA2 (162)</td><td>0x22 (34)</td><td>Unknown data object.</td></tr><tr><td>0xA3 (163)</td><td>0x23 (35)</td><td>Wrong format.</td></tr><tr><td>0xA4 (164)</td><td>0x24 (36)</td><td>Wrong data type.</td></tr><tr><td>0xA5 (165)</td><td>0x25 (37)</td><td>Device busy.</td></tr><tr><td>0xA6 (166)</td><td>0x26 (38)</td><td>Access denied.</td></tr><tr><td>0xA7 (167)</td><td>0x27 (39)</td><td>Request too long.</td></tr><tr><td>0xA8 (168)</td><td>0x28 (40)</td><td>Response too long.</td></tr><tr><td>0xA9 (169)</td><td>0x29 (41)</td><td>Invalid value. (e.g. too high or low number)</td></tr><tr><td>0xAA (170)</td><td>0x2A (42)</td><td>Text-mode not supported.</td></tr></tbody></table><h2 id="data-object-access-0x01-0x06" tabindex="-1"><a class="header-anchor" href="#data-object-access-0x01-0x06" aria-hidden="true">#</a> Data object access (0x01-0x06)</h2><p>Three different access methods are defined:</p><ul><li>List all data objects of one category</li><li>Read the content of specific data objects</li><li>Write new values to specific data ojbects</li></ul><p>As data objects of each category serve different purposes, the data is accessed using their category as the function name (see above table).</p><h2 id="list-data-objects" tabindex="-1"><a class="header-anchor" href="#list-data-objects" aria-hidden="true">#</a> List data objects</h2><p>Useful call for device discovery, as it lists all data objects of one category.</p><p>In text mode, an array of strings with the data object names is returned. In binary mode, either the names or the numeric IDs can be requested.</p><p>Only those data objects are returned which are at least readable. Thus, the result might differ after authentication.</p><h3 id="text-mode-1" tabindex="-1"><a class="header-anchor" href="#text-mode-1" aria-hidden="true">#</a> Text mode</h3><p>Example 1: List all names in category output</p><pre><code>!output
+:0 Success. [&quot;Bat_V&quot;, &quot;Ambient_degC&quot;]
+</code></pre><p>Example 2: List all names and their current values in category output</p><pre><code>!output {}
+:0 Success. {&quot;Bat_V&quot;:14.2, &quot;Ambient_degC&quot;:22}
+</code></pre><h3 id="binary-mode-1" tabindex="-1"><a class="header-anchor" href="#binary-mode-1" aria-hidden="true">#</a> Binary mode</h3><p>General format description:</p><pre><code>Request:
++------+------+
+| 0xXX | 0xYY |
++------+------+
+
+Response:
++------+===========================================+
+| 0xZZ | CBOR data: ID(s), name(s) and/or value(s) |
++------+===========================================+
+
+0xXX:   Function defining the category
+0xYY:   Either 0xF6 to request data object IDs, 0x80 to request data object names (strings)
+        or 0xa0 to request a map of names and values
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: List all data object IDs in category output</p><pre><code>Request:
+0x04        Function ID (output)
+    0xF6    CBOR null
+
+Response:
+0x80        Status code (Success)
+  0x82      CBOR array (2 elements)
+    0x03    Data Object ID (Bat_V)
+    0x04    Data Object ID (Ambient_degC)
+</code></pre><p>Example 2: List all data object names in category output</p><pre><code>Request:
+0x04        Function ID (output)
+    0x80    CBOR empty array
+
+Response:
+0x80                    Status code (Success)
+  0x82                  CBOR array (2 elements)
+    0x65 0x4261745F56   Data Object name (Bat_V)
+    0x6C 0x416D6269656E745F64656743     Data Object name (Ambient_degC)
+</code></pre><p>Example 3: List all data object names and their in category output</p><pre><code>Request:
+0x04        Function ID (output)
+    0xA0    CBOR empty map
+
+Response:
+0x80                    Status code (Success)
+  0xa2                  CBOR map (2 elements)
+    0x65 0x4261745F56   Data Object name (Bat_V)
+    0xFA 0x41633333     CBOR data (float32): 14.2
+    0x6C 0x416D6269656E745F64656743     Data Object name (Ambient_degC)
+    0x16                CBOR data (integer): 22
+</code></pre><h3 id="read-data-object-s" tabindex="-1"><a class="header-anchor" href="#read-data-object-s" aria-hidden="true">#</a> Read data object(s)</h3><p>Allows to read one or more data objects. The objects are identified by their ID (binary mode only) or by their name.</p><h4 id="text-mode-2" tabindex="-1"><a class="header-anchor" href="#text-mode-2" aria-hidden="true">#</a> Text mode</h4><p>The names of the data objects are passed to the function as a single string or as an array of strings.</p><p>The response contains a status code and the requested data. If a single data object was requested, the returned data is also a single JSON primitive (number, string, true/false, depending on data type). Multiple objects were requested, the response is an array containing the requested data objects in the same order.</p><p>Example 1: Read single data object &quot;enableSwitch&quot;</p><pre><code>!input &quot;EnableSwitch&quot;
+:0 Success. true
+</code></pre><p>Example 2: Read multiple data objects:</p><pre><code>!output [&quot;Bat_V&quot;, &quot;Ambient_degC&quot;]
+:0 Success. [14.2, 22]
+</code></pre><h3 id="binary-mode-2" tabindex="-1"><a class="header-anchor" href="#binary-mode-2" aria-hidden="true">#</a> Binary mode</h3><p>General format description:</p><pre><code>Request:
++------+=============================+
+| 0xXX | CBOR data: ID(s) or name(s) |
++------+=============================+
+
+Response:
++------+=====================+
+| 0xZZ | CBOR data: value(s) |
++------+=====================+
+
+0xXX:   Function defining the category
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: Read single data object &quot;EnableSwitch&quot;</p><pre><code>Request:
+0x03                Function ID (input)
+    0x02            Data Object ID (EnableSwitch)
+
+Response:
+0x80                Status code (Success)
+    0xF5            CBOR data: true
+</code></pre><p>Example 2: Read multiple data objects:</p><pre><code>Request:
+0x04                    Function ID (output)
+  0x82                  CBOR array (2 elements)
+    0x03                Data Object ID (Bat_V)
+    0x04                Data Object ID (Ambient_degC)
+
+Response:
+0x80                    Status code (Success)
+  0x82                  CBOR array (2 elements)
+    0xFA 0x41633333     CBOR data (float32): 14.2
+    0x16                CBOR data (integer): 22
+</code></pre><p>The binary mode also allows to use data object names (strings) instead of numeric IDs, which increases the amount of data.</p><h2 id="write-data-object-s" tabindex="-1"><a class="header-anchor" href="#write-data-object-s" aria-hidden="true">#</a> Write data object(s)</h2><p>Requests to overwrite a data object.</p><p>The device must support a write request using the same data type as used in the response of a read request for the given objects. Optionally, the device may also accept different data types (e.g. float32 instead of int) and convert the data internally.</p><p>Data of category <em>conf</em> will be written into persistent memory, so it is not allowed to change settings periodically. Only data of category <em>input</em> might be changed regularly.</p><p>If the data type is not supported, an error status code (36) is responded.</p><h3 id="text-mode-3" tabindex="-1"><a class="header-anchor" href="#text-mode-3" aria-hidden="true">#</a> Text mode</h3><p>Example 1: Disable the switch</p><pre><code>!input {&quot;EnableSwitch&quot;:false}
+:0 Success.
+</code></pre><p>Example 2: Attempt to write read-only measurement values (output category)</p><pre><code>!output {&quot;Bat_V&quot;:15.2, &quot;Ambient_degC&quot;:22}
+:38 Access denied.
+</code></pre><h3 id="binary-mode-3" tabindex="-1"><a class="header-anchor" href="#binary-mode-3" aria-hidden="true">#</a> Binary mode</h3><p>General layout:</p><pre><code>Request:
++------+==========================+
+| 0xXX | CBOR data: key/value map |
++------+==========================+
+
+Response:
++------+
+| 0xZZ |
++------+
+
+0xXX:   Function defining the category
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: Disable the switch</p><pre><code>Request:
+0x03                Function ID (input)
+  0xA1              CBOR map (1 element)
+    0x02            Data Object ID (EnableSwitch)
+    0xF4            CBOR data: false
+
+Response:
+0x80                Status code: Success
+</code></pre><p>Example 2: Attempt to write read-only measurement values (output category)</p><pre><code>Request:
+0x04                    Function ID (output)
+  0xA2                  CBOR map (2 elements)
+    0x03                Data Object ID (Bat_V)
+    0xFA 0x41633333     CBOR data (float32): 14.2
+    0x04                Data Object ID (Ambient_degC)
+    0x16                CBOR data (integer): 22
+
+Response:
+0xA6                    Status code (Access denied)
+</code></pre><h2 id="execute-0x0b" tabindex="-1"><a class="header-anchor" href="#execute-0x0b" aria-hidden="true">#</a> Execute (0x0B)</h2><p>Executes a function identified by a data object name of category &quot;exec&quot;.</p><h4 id="text-mode-4" tabindex="-1"><a class="header-anchor" href="#text-mode-4" aria-hidden="true">#</a> Text mode</h4><p>Example: Go into bootloader mode</p><pre><code>!exec &quot;Bootloader&quot;
+:0 Success.
+</code></pre><h2 id="get-data-object-name-0x0e" tabindex="-1"><a class="header-anchor" href="#get-data-object-name-0x0e" aria-hidden="true">#</a> Get data object name (0x0E)</h2><p>Returns the name of a data object specified by its ID. This function makes sense for binary mode only, as the text-based mode uses the names directly.</p><h3 id="binary-mode-4" tabindex="-1"><a class="header-anchor" href="#binary-mode-4" aria-hidden="true">#</a> Binary mode</h3><p>General format description:</p><pre><code>Request:
++------+==================+
+| 0x0E | CBOR data: ID(s) |
++------+==================+
+
+Response:
++------+====================+
+| 0xZZ | CBOR data: name(s) |
++------+====================+
+
+0xZZ:   Response code (0x80 for success)
+</code></pre><p>Example 1: Request name of data object ID 0x03 (Bat_V)</p><pre><code>Request:
+0x0E                        Function ID (name)
+    0x03                    Data Object ID (Bat_V)
+
+Response:
+0x80                        Status code: Success.
+    0x65 0x4261745F56       String of length 5: &quot;Bat_V&quot;
+</code></pre><p>Example 2: Request name of multiple data objects</p><pre><code>Request:
+0x0E                            Function ID (name)
+  0x82                          CBOR array (2 elements)
+    0x03                        Data Object ID (Bat_V)
+    0x04                        Data Object ID (Ambient_degC)
+
+Response:
+0x80                            Status code: Success.
+  0x82                          CBOR array (2 elements)
+    0x65 0x4261745F56           Data Object name (Bat_V)
+    0x6C 0x416D6269656E745F64656743     Data Object name (Ambient_degC)
+</code></pre><h2 id="authentication-0x10" tabindex="-1"><a class="header-anchor" href="#authentication-0x10" aria-hidden="true">#</a> Authentication (0x10)</h2><p>Some of the device parameters like calibration or config settings should be protected against unauthorized change. The protocol provides a simple authentication method. Multiple user levels can be implemented in the firmware using different passwords. The manufacturer would use a different one to authenticate than a normal user and thus get more rights to access data objects.</p><p><em>Remark:</em> Previous versions of this specification suggested a challenge-response method with hashed passwords in order to avoid plain text transmission of the password on the bus and prevent replay attacks. However, this contradicts with the stateless nature of the protocol, as the device needs to store the challenge it sent out and wait for the second message of the host. In addition to that, it does not provide a method for verification of the sender, so any participant on the bus could change data objects requiring authentication once one of the hosts successfully authenticated. That&#39;s why it was decided to use the much more simple method with plain text password. Encryption can be added on lower layer protocols, though.</p><h4 id="text-mode-5" tabindex="-1"><a class="header-anchor" href="#text-mode-5" aria-hidden="true">#</a> Text mode</h4><p>The password is transferred as a plain text string.</p><pre><code>!auth &quot;mypass&quot;
+:0 Success.
+</code></pre><p>After successful authentication, the device exposes restricted data objects via the normal data object access commands. The authentication stays valid until another auth command is received, either without password or with a password that doesn&#39;t match.</p><h3 id="binary-mode-5" tabindex="-1"><a class="header-anchor" href="#binary-mode-5" aria-hidden="true">#</a> Binary mode</h3><p>Analog to text mode.</p><h2 id="publication-request-0x12" tabindex="-1"><a class="header-anchor" href="#publication-request-0x12" aria-hidden="true">#</a> Publication request (0x12)</h2><p>A publication request tells the device to publish certain data on a regular basis through a defined communication channel (UART, CAN, LoRa, etc.). It is not feasible to define different publication intervals and communication channels for each data object, as this would create lots of programming effort. Instead, the firmware developer pre-defines some communication channels and a given interval (e.g. &quot;LoRa_60min&quot;). The available channels can be discovered using the !pub command. The !pub command can also be used to configure data objects for publication or delete objects from the publication list.</p><h3 id="text-mode-6" tabindex="-1"><a class="header-anchor" href="#text-mode-6" aria-hidden="true">#</a> Text mode</h3><p>Example 1: List all available publication channels</p><pre><code>!pub
+:0 Success. [&quot;CAN_100ms&quot;, &quot;LoRa_60min&quot;, &quot;Serial_1s&quot;]
+</code></pre><p>The name of the interface and the publication interval is separated by an underscore. The interval is specified in hours (h), minutes (min), seconds (s) or milliseconds (ms). Main intention of the channel description is to be human-readable (e.g. for the technician setting up the device).</p><p>Example 2: List configured data objects for second channel (LoRa_60min)</p><pre><code>!pub &quot;CAN_100ms&quot;
+:0 Success. [&quot;Bat_V&quot;, &quot;Ambient_degC&quot;]
+</code></pre><p>With this setting, the following message is automatically sent by the device once per hour:</p><pre><code># {&quot;Bat_V&quot;:15.2,&quot;Ambient_degC&quot;:22}
+</code></pre><p>Example 3: Change the list for the &quot;CAN_100ms&quot; channel.</p><pre><code>!pub {&quot;CAN_100ms&quot;:[&quot;Bat_V&quot;]}
+:0 Success.
+</code></pre><p>The data object Ambient_degC is removed from the publication list.</p><p>Example 4: Enable a publication channel</p><pre><code>!pub {&quot;CAN_100ms&quot;:true}
+:0 Success.
+</code></pre><p>To disable the channel, send <code>false</code> instead of <code>true</code>.</p><h3 id="binary-mode-6" tabindex="-1"><a class="header-anchor" href="#binary-mode-6" aria-hidden="true">#</a> Binary mode</h3><p>The format in binary mode is analog to the text mode format.</p><p>Example 1: List all available publication channels (as strings)</p><pre><code>Request:
+0x12                            Function ID (pub)
+    0x60                        CBOR empty string (otherwise we don&#39;t know the length of the message)
+
+Response:
+0x80                            Status code: Success.
+  0x83                          CBOR array (3 elements)
+    0x69 0x43414E5F3130306D73   String of length 9: &quot;CAN_100ms&quot;
+    0x6A 4C6F52615F36306D696E   String of length 10: &quot;LoRa_60min&quot;
+    0x69 53657269616C5F3173     String of length 9: &quot;Serial_1s&quot;
+</code></pre><p>Example 2: List configured data objects for second channel (LoRa_60min)</p><pre><code>Request:
+0x12                            Function ID (pub)
+    0x69 0x43414E5F3130306D73   String of length 9: &quot;CAN_100ms&quot;
+
+Response:
+0x80                            Status code: Success.
+  0x82                          CBOR array (2 elements)
+    0x19 0x4001                 Data Object ID (Bat_V)
+    0x19 0x4002                 Data Object ID (Ambient_degC)
+</code></pre><p>Example 3: Change the list for the second channel.</p><pre><code>Request:
+0x12                            Function ID (pub)
+  0xA1                          CBOR map (1 element)
+    0x69 0x43414E5F3130306D73   String of length 9: &quot;CAN_100ms&quot;
+    0x19 0x4001                 Data Object ID (Bat_V)
+
+Response:
+0x80                            Status code: Success.
+</code></pre><p>With this setting, the following message is automatically sent by the device once per hour (see below for publication message definition):</p><pre><code>0x1F                            Function ID (publication message)
+  0xA2                          CBOR map (2 elements)
+    0x19 0x4001                 Data Object ID (Bat_V)
+    0xFa 0x41733333             CBOR data (float32): 15.2
+    0x19 0x4002                 Data Object ID (Ambient_degC)
+    0x16                        CBOR data (integer): 22
+</code></pre><p>Example 4: Enable a publication channel</p><pre><code>Request:
+0x12                            Function ID (pub)
+  0xA1                          CBOR map (1 element)
+    0x69 0x43414E5F3130306D73   String of length 9: &quot;CAN_100ms&quot;
+    0xF5                        CBOR pimitive (true)
+
+Response:
+0x80                        Status code: Success.
+</code></pre><h2 id="preliminary-logging-data-0x" tabindex="-1"><a class="header-anchor" href="#preliminary-logging-data-0x" aria-hidden="true">#</a> PRELIMINARY: Logging data (0x??)</h2><p><em>Remarks: Work on !log function is still in progress. This suggested specification is preliminary. Good suggestions and feedback are welcome!</em></p><p>A device might have internal data logging features. It should be possible to read out the logging data via ThingSet.</p><p>The suggestion is that the firmware developer pre-defines different logging channels/files (e.g. &quot;daily&quot;, &quot;24hours&quot;). Each channel has a number which can be discovered using the !log command.</p><h3 id="text-mode-7" tabindex="-1"><a class="header-anchor" href="#text-mode-7" aria-hidden="true">#</a> Text mode</h3><p>Example 1: List all available log files</p><pre><code>!log
+:0 Success. [&quot;daily&quot;, &quot;24hours&quot;]
+</code></pre><p>The name of the log file should describe the log level (e.g. a daily log will contain less details per day, the logging of last 24hours may contain more data).</p><p>Example 2: List number of log entries in first log file (daily)</p><pre><code>!log &quot;daily&quot;
+:0 Success. 34
+</code></pre><p>Example 3: Request log entry 20 of daily log file</p><pre><code>!log {&quot;daily&quot;:1}
+:0 Success. {&quot;BatMax_V&quot;:14.5, &quot;Errors&quot;:7}
+</code></pre><p>Maybe also allow to request multiple log file entries at the same time, like this:</p><p>Example 4: Request first and last log entry</p><pre><code>!log {&quot;daily&quot;:[0,33]}
+:0 Success. [{&quot;BatMax_V&quot;:14.5, &quot;Errors&quot;:7},{&quot;BatMax_V&quot;:14.3, &quot;Errors&quot;:11}]
+</code></pre><h3 id="binary-mode-7" tabindex="-1"><a class="header-anchor" href="#binary-mode-7" aria-hidden="true">#</a> Binary mode</h3><p>ToDo</p><h2 id="publication-message-0x1f" tabindex="-1"><a class="header-anchor" href="#publication-message-0x1f" aria-hidden="true">#</a> Publication message (0x1F)</h2><p>Publication messages are sent regularly in a specified interval. The interval and the data objects can be factory-programmed or can be configured via the !pub function. The !pub function requests data to be published, whereas the publication message actually publishes the data.</p><p>Publication messages are broadcast to all connected devices. No response is sent from devices receiving the message.</p><h3 id="text-mode-8" tabindex="-1"><a class="header-anchor" href="#text-mode-8" aria-hidden="true">#</a> Text mode</h3><p>Example 1: Publication of a single parameter</p><pre><code># &quot;enableSwitch&quot;: false
+</code></pre><p>Example 2: Publication of multiple parameters</p><pre><code># {&quot;vBat&quot;: 15.2, &quot;tAmbient&quot;: 22}
+</code></pre><h3 id="binary-mode-8" tabindex="-1"><a class="header-anchor" href="#binary-mode-8" aria-hidden="true">#</a> Binary mode</h3><p>General layout:</p><pre><code>Publication message (broadcast):
++------+==========================+
+| 0x1F | CBOR data: key/value map |
++------+==========================+
+</code></pre><p>Example 1: Publication of a single parameter</p><pre><code>Message:
+0x1F                Function ID (publication message)
+  0xA1              CBOR map (1 element)
+    0x19 0x3001     Data Object ID (enableSwitch)
+    0xF4            CBOR data: false
+</code></pre><p>Example 2: Publication of multiple parameters</p><pre><code>Message:
+0x1F                    Function ID (publication message)
+  0xA2                  CBOR map (2 elements)
+    0x19 0x4001         Data Object ID (vBat)
+    0xFa 0x41733333     CBOR data (float32): 15.2
+    0x19 0x4002         Data Object ID (tAmbient)
+    0x16                CBOR data (integer): 22
+</code></pre><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="nav-link external meta-item-label" href="https://github.com/LibreSolar/thingset/edit/vuepress-v2/docs/v0.2/2b_functions.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">8/11/2021, 8:20:48 PM</span></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"> ← <a href="/thingset/branch/vuepress-v2/v0.2/2a_general.html" class="nav-link" aria-label="General Protocol Concept"><!--[--><!--]--> General Protocol Concept <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--[--><div class="footer"><span style="padding:5px;"><a href="https://twitter.com/LibreSolar"><img src="/thingset/images/twitter-logo.svg" height="14"> Twitter</a></span><span style="padding:5px;"><a href="https://github.com/LibreSolar"><img src="/thingset/images/github-logo.svg" height="14"> GitHub</a></span> | <span style="padding:5px;">Content provided by The Libre Solar Project under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0 License</a></span> | <span style="padding:5px;"><a href="https://libre.solar/about/contact.html">Contact / Impressum</a></span></div><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script src="/thingset/branch/vuepress-v2/assets/js/runtime~app.af676c0b.js" defer></script><script src="/thingset/branch/vuepress-v2/assets/js/296.924a1455.js" defer></script><script src="/thingset/branch/vuepress-v2/assets/js/app.df323b81.js" defer></script>
+  </body>
+</html>
